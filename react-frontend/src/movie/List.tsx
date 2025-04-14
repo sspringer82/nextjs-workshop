@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Movie } from './Movie';
 import ListItem from './ListItem';
 import { deleteMovie, getAllMovies } from './movie.api';
@@ -6,6 +6,8 @@ import { deleteMovie, getAllMovies } from './movie.api';
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState<Error | null>(null);
+  const [filter, setFilter] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     getAllMovies()
@@ -28,20 +30,39 @@ const List: React.FC = () => {
 
   if (movies.length > 0) {
     content = (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies.map((movie) => (
-            <ListItem key={movie.id} movie={movie} onDelete={handleDelete} />
-          ))}
-        </tbody>
-      </table>
+      <>
+        <div>
+          <label>
+            Filter:
+            <input type="text" ref={inputRef} />
+            <button onClick={() => setFilter(inputRef.current!.value)}>
+              filter
+            </button>
+          </label>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            {movies
+              .filter((movie) =>
+                movie.title.toLowerCase().includes(filter.toLowerCase())
+              )
+              .map((movie) => (
+                <ListItem
+                  key={movie.id}
+                  movie={movie}
+                  onDelete={handleDelete}
+                />
+              ))}
+          </tbody>
+        </table>
+      </>
     );
   }
 
