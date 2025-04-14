@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { User } from './User';
+import ListItem from './ListItem';
 
 // export default function List(): ReactNode {
 //   return <div>Hallo Welt</div>;
@@ -13,6 +14,10 @@ const users: User[] = [
   { id: '5', name: 'john', role: 'admin' },
   { id: '6', name: 'susan', role: 'viewer' },
 ];
+
+function Headline() {
+  return <h1>Headline</h1>;
+}
 
 const List: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -48,7 +53,7 @@ const List: React.FC = () => {
     content = (
       <ul>
         {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <ListItem key={user.id} user={user} />
         ))}
       </ul>
     );
@@ -56,6 +61,7 @@ const List: React.FC = () => {
 
   return (
     <>
+      <Headline />
       <h1 className="headline">User List {users.length}</h1>
       <div>Count: {count}</div>
       {content}
