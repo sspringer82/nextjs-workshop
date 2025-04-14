@@ -1,8 +1,15 @@
 import './App.css';
-import List from './user/List';
+import MovieList from './movie/List';
+import UserList from './user/List';
 
 function App() {
-  return <List />;
+  return (
+    <>
+      <UserList />
+      <hr />
+      <MovieList />
+    </>
+  );
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { User } from './user';
+import { User } from './User';
 
 // export default function List(): ReactNode {
 //   return <div>Hallo Welt</div>;
@@ -29,8 +29,12 @@ const List: React.FC = () => {
 
   return (
     <>
-      <h1>User List {users.length}</h1>
+      <h1 className="headline">User List {users.length}</h1>
       {content}
+      {/* <div>
+        <label htmlFor=""></label>
+        <input type="text" id="search" />
+      </div> */}
     </>
   );
 };

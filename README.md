@@ -15,3 +15,5 @@ https://github.com/sspringer82/nextjs-workshop
 
 - Rules of React: https://react.dev/reference/rules
 - React Compiler: https://react.dev/learn/react-compiler
+- Fake Data Generator: https://fakerjs.dev/
+- useEffect Guide: https://overreacted.io/a-complete-guide-to-useeffect/
