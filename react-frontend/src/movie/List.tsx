@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { movies as movieData } from './data';
 import { Movie } from './Movie';
+import ListItem from './ListItem';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -23,11 +24,7 @@ const List: React.FC = () => {
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <tr key={movie.id}>
-              <td>{movie.id}</td>
-              <td>{movie.title}</td>
-              <td>{movie.year}</td>
-            </tr>
+            <ListItem key={movie.id} movie={movie} />
           ))}
         </tbody>
       </table>

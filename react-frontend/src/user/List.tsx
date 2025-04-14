@@ -69,6 +69,15 @@ const List: React.FC = () => {
         <label htmlFor=""></label>
         <input type="text" id="search" />
       </div> */}
+
+      <button
+        onClick={(event) => {
+          console.log(event.target);
+          console.log('Hallo welt');
+        }}
+      >
+        Click me
+      </button>
     </>
   );
 };
