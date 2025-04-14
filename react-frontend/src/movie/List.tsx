@@ -1,6 +1,19 @@
-import { movies } from './data';
+import { useEffect, useState } from 'react';
+import { movies as movieData } from './data';
+import { Movie } from './Movie';
 
 const List: React.FC = () => {
+  const [movies, setMovies] = useState<Movie[]>([
+    { id: '23d21', title: 'Movie 1', year: 1900 },
+  ]);
+
+  useEffect(() => {
+    // setMovies(movieData);
+    setMovies((prev) => {
+      return [...prev, ...movieData];
+    });
+  }, []);
+
   let content = <div>Keine Datensätze vorhanden</div>;
 
   if (movies.length > 0) {
