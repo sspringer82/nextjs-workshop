@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Movie } from './Movie';
 import ListItem from './ListItem';
 import { deleteMovie, getAllMovies } from './movie.api';
+import Filter from './Filter';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -28,18 +29,13 @@ const List: React.FC = () => {
 
   let content = <div>Keine Datensätze vorhanden</div>;
 
-  if (movies.length > 0) {
+  const filteredFilms = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filteredFilms.length > 0) {
     content = (
       <>
-        <div>
-          <label>
-            Filter:
-            <input type="text" ref={inputRef} />
-            <button onClick={() => setFilter(inputRef.current!.value)}>
-              filter
-            </button>
-          </label>
-        </div>
         <table>
           <thead>
             <tr>
@@ -49,17 +45,9 @@ const List: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {movies
-              .filter((movie) =>
-                movie.title.toLowerCase().includes(filter.toLowerCase())
-              )
-              .map((movie) => (
-                <ListItem
-                  key={movie.id}
-                  movie={movie}
-                  onDelete={handleDelete}
-                />
-              ))}
+            {filteredFilms.map((movie) => (
+              <ListItem key={movie.id} movie={movie} onDelete={handleDelete} />
+            ))}
           </tbody>
         </table>
       </>
@@ -68,12 +56,13 @@ const List: React.FC = () => {
 
   return (
     <>
-      <h1 className="headline">Movie List</h1>
+      <h1 className="headline">Movie List ({filteredFilms.length})</h1>
       {error && (
         <div style={{ border: '5px solid red', color: 'hotpink' }}>
           {error.message}
         </div>
       )}
+      <Filter inputRef={inputRef} setFilter={setFilter} />
       {content}
     </>
   );
