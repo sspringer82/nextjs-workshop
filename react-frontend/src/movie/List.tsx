@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Movie } from './Movie';
 import ListItem from './ListItem';
-import { getAllMovies } from './movie.api';
+import { deleteMovie, getAllMovies } from './movie.api';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -13,17 +13,20 @@ const List: React.FC = () => {
       .catch((error) => setError(error));
   }, []);
 
-  function handleDelete(id: string): void {
-    setMovies((oldMovies) => {
-      return oldMovies.filter((oldMovie) => oldMovie.id !== id);
-    });
+  async function handleDelete(id: string): Promise<void> {
+    try {
+      await deleteMovie(id);
+      setMovies((oldMovies) => {
+        return oldMovies.filter((oldMovie) => oldMovie.id !== id);
+      });
+    } catch {
+      setError(new Error('Failed to delete'));
+    }
   }
 
   let content = <div>Keine Datensätze vorhanden</div>;
 
-  if (error) {
-    content = <span>Error: {error.message}</span>;
-  } else if (movies.length > 0) {
+  if (movies.length > 0) {
     content = (
       <table>
         <thead>
@@ -45,6 +48,11 @@ const List: React.FC = () => {
   return (
     <>
       <h1 className="headline">Movie List</h1>
+      {error && (
+        <div style={{ border: '5px solid red', color: 'hotpink' }}>
+          {error.message}
+        </div>
+      )}
       {content}
     </>
   );

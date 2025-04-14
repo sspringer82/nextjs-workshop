@@ -1,6 +1,6 @@
 import { User } from './User';
 
-const baseUrl = 'http://localhost:3001/userssws';
+const baseUrl = 'http://localhost:3001/users';
 
 export async function getAllUsers(): Promise<User[]> {
   return [];
