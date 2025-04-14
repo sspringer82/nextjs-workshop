@@ -1,29 +1,181 @@
 {
   "movies": [
-    { "id": "1a2b3c", "title": "Inception", "year": 2010 },
-    { "id": "2b3c4d", "title": "The Matrix", "year": 1999 },
-    { "id": "3c4d5e", "title": "Interstellar", "year": 2014 },
-    { "id": "4d5e6f", "title": "The Dark Knight", "year": 2008 },
-    { "id": "5e6f7g", "title": "Pulp Fiction", "year": 1994 },
-    { "id": "6f7g8h", "title": "The Shawshank Redemption", "year": 1994 },
-    { "id": "7g8h9i", "title": "Fight Club", "year": 1999 },
-    { "id": "8h9i0j", "title": "Forrest Gump", "year": 1994 },
-    { "id": "9i0j1k", "title": "The Godfather", "year": 1972 },
-    { "id": "0j1k2l", "title": "Gladiator", "year": 2000 },
-    { "id": "a1b2c3", "title": "Parasite", "year": 2019 },
-    { "id": "b2c3d4", "title": "The Social Network", "year": 2010 },
-    { "id": "c3d4e5", "title": "Whiplash", "year": 2014 },
-    { "id": "d4e5f6", "title": "The Grand Budapest Hotel", "year": 2014 },
-    { "id": "e5f6g7", "title": "Mad Max: Fury Road", "year": 2015 },
-    { "id": "f6g7h8", "title": "Django Unchained", "year": 2012 },
-    { "id": "g7h8i9", "title": "La La Land", "year": 2016 },
-    { "id": "h8i9j0", "title": "Joker", "year": 2019 },
-    { "id": "i9j0k1", "title": "Blade Runner 2049", "year": 2017 },
+    {
+      "id": "1a2b3c",
+      "title": "Inception",
+      "year": 2010
+    },
+    {
+      "id": "2b3c4d",
+      "title": "The Matrix",
+      "year": 1999
+    },
+    {
+      "id": "3c4d5e",
+      "title": "Interstellar",
+      "year": 2014
+    },
+    {
+      "id": "4d5e6f",
+      "title": "The Dark Knight",
+      "year": 2008
+    },
+    {
+      "id": "5e6f7g",
+      "title": "Pulp Fiction",
+      "year": 1994
+    },
+    {
+      "id": "6f7g8h",
+      "title": "The Shawshank Redemption",
+      "year": 1994
+    },
+    {
+      "id": "7g8h9i",
+      "title": "Fight Club",
+      "year": 1999
+    },
+    {
+      "id": "8h9i0j",
+      "title": "Forrest Gump",
+      "year": 1994
+    },
+    {
+      "id": "9i0j1k",
+      "title": "The Godfather",
+      "year": 1972
+    },
+    {
+      "id": "0j1k2l",
+      "title": "Gladiator",
+      "year": 2000
+    },
+    {
+      "id": "a1b2c3",
+      "title": "Parasite",
+      "year": 2019
+    },
+    {
+      "id": "b2c3d4",
+      "title": "The Social Network",
+      "year": 2010
+    },
+    {
+      "id": "c3d4e5",
+      "title": "Whiplash",
+      "year": 2014
+    },
+    {
+      "id": "d4e5f6",
+      "title": "The Grand Budapest Hotel",
+      "year": 2014
+    },
+    {
+      "id": "e5f6g7",
+      "title": "Mad Max: Fury Road",
+      "year": 2015
+    },
+    {
+      "id": "f6g7h8",
+      "title": "Django Unchained",
+      "year": 2012
+    },
+    {
+      "id": "g7h8i9",
+      "title": "La La Land",
+      "year": 2016
+    },
+    {
+      "id": "h8i9j0",
+      "title": "Joker",
+      "year": 2019
+    },
+    {
+      "id": "i9j0k1",
+      "title": "Blade Runner 2049",
+      "year": 2017
+    },
     {
       "id": "j0k1l2",
       "title": "Everything Everywhere All At Once",
       "year": 2022
+    },
+    {
+      "id": "bdee",
+      "title": "300",
+      "year": 2006
+    },
+    {
+      "id": "9146",
+      "title": "Pumuckl",
+      "year": "2025"
+    },
+    {
+      "id": "a979",
+      "title": "Pumuckl",
+      "year": "2025"
+    },
+    {
+      "id": "2e05",
+      "title": "bla",
+      "year": "2020"
+    },
+    {
+      "id": "4c11",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "e09c",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "7f0d",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "130b",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "14e9",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "91ed",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "1089",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "3654",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "bf21",
+      "title": "asdf",
+      "year": "1234"
+    },
+    {
+      "id": "f691",
+      "title": "xxxxx",
+      "year": "2222"
     }
   ],
-  "users": [{ "id": "1", "name": "Basti", "role": "SuperAdmin" }]
+  "users": [
+    {
+      "id": "1",
+      "name": "Basti",
+      "role": "SuperAdmin"
+    }
+  ]
 }

@@ -21,6 +21,7 @@ https://github.com/sspringer82/nextjs-workshop
 - Immutable.js: https://immutable-js.com/ (schwergewichtig)
 - Immer.js: https://immerjs.github.io/immer/
 - Ky - fetch Alternative: https://github.com/sindresorhus/ky
+- React Hook Form: https://react-hook-form.com/
 
 ## Backend
 

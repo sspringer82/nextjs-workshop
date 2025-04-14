@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Movie } from './Movie';
+import { CreateMovie, Movie } from './Movie';
 import ListItem from './ListItem';
-import { deleteMovie, getAllMovies } from './movie.api';
+import { createMovie, deleteMovie, getAllMovies } from './movie.api';
 import Filter from './Filter';
+import Form from './Form';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -27,11 +28,20 @@ const List: React.FC = () => {
     }
   }
 
+  async function handleCreate(newMovie: CreateMovie) {
+    const createdMovie = await createMovie(newMovie);
+    setMovies((prevMovies) => {
+      return [...prevMovies, createdMovie];
+    });
+  }
+
   let content = <div>Keine Datensätze vorhanden</div>;
 
-  const filteredFilms = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredFilms = movies.filter((movie) => {
+    return (
+      movie.title && movie.title.toLowerCase().includes(filter.toLowerCase())
+    );
+  });
 
   if (filteredFilms.length > 0) {
     content = (
@@ -57,6 +67,9 @@ const List: React.FC = () => {
   return (
     <>
       <h1 className="headline">Movie List ({filteredFilms.length})</h1>
+
+      <Form onCreate={handleCreate} />
+
       {error && (
         <div style={{ border: '5px solid red', color: 'hotpink' }}>
           {error.message}

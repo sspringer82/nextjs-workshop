@@ -1,4 +1,4 @@
-import { Movie } from './Movie';
+import { CreateMovie, Movie } from './Movie';
 
 const baseUrl = 'http://localhost:3001/movies';
 
@@ -15,4 +15,18 @@ export async function deleteMovie(id: string): Promise<void> {
   if (!response.ok) {
     throw new Error('Failed to Delete');
   }
+}
+
+export async function createMovie(newMovie: CreateMovie): Promise<Movie> {
+  const response = await fetch(baseUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newMovie),
+  });
+  if (!response.ok) {
+    throw new Error('whoops');
+  }
+  return response.json();
 }
