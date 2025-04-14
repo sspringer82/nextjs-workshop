@@ -15,7 +15,7 @@ const List: React.FC = () => {
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <tr>
+            <tr key={movie.id}>
               <td>{movie.id}</td>
               <td>{movie.title}</td>
               <td>{movie.year}</td>

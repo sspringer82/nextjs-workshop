@@ -15,17 +15,21 @@ const users: User[] = [
 ];
 
 const List: React.FC = () => {
-  console.log('RENDER');
   const [count, setCount] = useState(0);
 
   let content = <div>Keine Datensätze vorhanden</div>;
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setCount((prevCount) => {
         return prevCount + 1;
       });
     }, 1_000);
+
+    return () => {
+      console.log('cleanup');
+      clearInterval(interval);
+    };
   }, []);
 
   /*
