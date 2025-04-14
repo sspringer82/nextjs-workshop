@@ -20,3 +20,11 @@ https://github.com/sspringer82/nextjs-workshop
 - Immutability-Helper (nicht machen):https://github.com/kolodny/immutability-helper
 - Immutable.js: https://immutable-js.com/ (schwergewichtig)
 - Immer.js: https://immerjs.github.io/immer/
+- Ky - fetch Alternative: https://github.com/sindresorhus/ky
+
+## Backend
+
+- npm install json-server
+- `backend/data.json` mit Daten füllen
+- package.json - scripts - backend: `json-server -p 3001 backend/data.json`
+- `npm run backend`
