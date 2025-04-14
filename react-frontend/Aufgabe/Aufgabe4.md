@@ -7,3 +7,9 @@ Füge einen button pro Zeile hinzu, registriere einen Eventhandler, mit dem du d
 ## Tipp:
 
 um den State der Elternkomponente zu manipulieren, definiere eine Funktion in der Elternkomponente und übergib sie der Kindkomponten.
+
+Element aus einem Array löschen:
+
+```ts
+myArr.filter((el) => el.id !== id);
+```
