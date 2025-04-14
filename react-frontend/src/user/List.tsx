@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { User } from './User';
 
 // export default function List(): ReactNode {
@@ -15,7 +15,30 @@ const users: User[] = [
 ];
 
 const List: React.FC = () => {
+  console.log('RENDER');
+  const [count, setCount] = useState(0);
+
   let content = <div>Keine Datensätze vorhanden</div>;
+
+  useEffect(() => {
+    setInterval(() => {
+      setCount((prevCount) => {
+        return prevCount + 1;
+      });
+    }, 1_000);
+  }, []);
+
+  /*
+  // mount
+  useEffect(() => {}, []);
+  // update
+  useEffect(() => {}); // bei jedem Render
+  useEffect(() => {}, [count]); // nur wenn sich count ändert
+  // unmount
+  useEffect(() => {
+    return () => {}; // wird aufgerufen wenn unmounted
+  }, []);
+  */
 
   if (users.length > 0) {
     content = (
@@ -30,6 +53,7 @@ const List: React.FC = () => {
   return (
     <>
       <h1 className="headline">User List {users.length}</h1>
+      <div>Count: {count}</div>
       {content}
       {/* <div>
         <label htmlFor=""></label>
