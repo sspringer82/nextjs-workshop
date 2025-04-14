@@ -10,6 +10,12 @@ const List: React.FC = () => {
     setMovies(movieData);
   }, []);
 
+  function handleDelete(id: string): void {
+    setMovies((oldMovies) => {
+      return oldMovies.filter((oldMovie) => oldMovie.id !== id);
+    });
+  }
+
   let content = <div>Keine Datensätze vorhanden</div>;
 
   if (movies.length > 0) {
@@ -24,7 +30,7 @@ const List: React.FC = () => {
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <ListItem key={movie.id} movie={movie} />
+            <ListItem key={movie.id} movie={movie} onDelete={handleDelete} />
           ))}
         </tbody>
       </table>

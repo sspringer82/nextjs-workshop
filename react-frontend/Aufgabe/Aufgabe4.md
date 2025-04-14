@@ -13,3 +13,9 @@ Element aus einem Array löschen:
 ```ts
 myArr.filter((el) => el.id !== id);
 ```
+
+```ts
+function deleteMe(id: string) {}
+
+(id: string) => void
+```
