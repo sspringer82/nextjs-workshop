@@ -35,13 +35,13 @@ const List: React.FC = () => {
     });
   }
 
-  let content = <div>Keine Datensätze vorhanden</div>;
-
   const filteredFilms = movies.filter((movie) => {
     return (
       movie.title && movie.title.toLowerCase().includes(filter.toLowerCase())
     );
   });
+
+  let content = <div>Keine Datensätze vorhanden</div>;
 
   if (filteredFilms.length > 0) {
     content = (

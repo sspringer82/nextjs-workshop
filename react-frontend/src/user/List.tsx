@@ -2,13 +2,10 @@ import { useEffect, useState } from 'react';
 import { User } from './User';
 import ListItem from './ListItem';
 import { getAllUsers } from './user.api';
+import useList from './useList';
 
 const List: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    getAllUsers().then((data) => setUsers(data));
-  }, []);
+  const users = useList<User>(getAllUsers);
 
   let content = <div>no data</div>;
 
