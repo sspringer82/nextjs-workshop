@@ -1,6 +1,7 @@
 import { Movie } from '@/types/Movie';
 import { NextPage } from 'next';
 import { getAll } from './movie.api';
+import ListItem from './components/ListItem';
 
 const MoviesPage: NextPage = async () => {
   let movies: Movie[] = [];
@@ -39,13 +40,7 @@ const MoviesPage: NextPage = async () => {
               </tr>
             )}
             {movies.length > 0 &&
-              movies.map((movie) => (
-                <tr key={movie.id}>
-                  <td>{movie.id}</td>
-                  <td>{movie.title}</td>
-                  <td>{movie.year}</td>
-                </tr>
-              ))}
+              movies.map((movie) => <ListItem key={movie.id} movie={movie} />)}
           </tbody>
         </table>
       </>
