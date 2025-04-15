@@ -22,6 +22,7 @@ https://github.com/sspringer82/nextjs-workshop
 - Immer.js: https://immerjs.github.io/immer/
 - Ky - fetch Alternative: https://github.com/sindresorhus/ky
 - React Hook Form: https://react-hook-form.com/
+- Kent C. Dodds: https://kentcdodds.com/blog
 
 ## Backend
 

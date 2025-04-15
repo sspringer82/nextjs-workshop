@@ -2,6 +2,7 @@ import { User } from './User';
 import ListItem from './ListItem';
 import { getAllUsers } from './user.api';
 import useList from './useList';
+import { useUserContext } from './UserProvider';
 
 const List: React.FC = () => {
   const users = useList<User>(getAllUsers);

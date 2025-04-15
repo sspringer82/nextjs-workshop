@@ -1,14 +1,21 @@
 import './App.css';
 import RHF from './forms/RHF';
 import MovieList from './movie/List';
+import List from './user/List';
+import UserCount from './user/UserCount';
+import { UserProvider } from './user/UserProvider';
 
 function App() {
   return (
-    <>
-      <RHF />
-      <hr />
-      <MovieList />
-    </>
+    <UserProvider>
+      <>
+        <List />
+        <UserCount />
+        <RHF />
+        <hr />
+        <MovieList />
+      </>
+    </UserProvider>
   );
 }
 
