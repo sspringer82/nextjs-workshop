@@ -1,4 +1,6 @@
-export default async function UserPage() {
+import { NextPage } from 'next';
+
+const UserPage: NextPage = async () => {
   const response = await fetch('http://localhost:3001/users');
   const users = (await response.json()) as { id: string; name: string }[];
 
@@ -12,4 +14,6 @@ export default async function UserPage() {
       </ul>
     </>
   );
-}
+};
+
+export default UserPage;

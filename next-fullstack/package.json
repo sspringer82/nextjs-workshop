@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "babel-plugin-react-compiler": "^19.0.0-beta-ebf51a3-20250411",
+    "ky": "^1.8.1",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
