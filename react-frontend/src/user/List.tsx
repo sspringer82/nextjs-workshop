@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { User } from './User';
 import ListItem from './ListItem';
 import { getAllUsers } from './user.api';
