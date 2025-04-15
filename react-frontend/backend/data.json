@@ -121,6 +121,31 @@
       "id": "1",
       "name": "Basti",
       "role": "SuperAdmin"
+    },
+    {
+      "id": "2",
+      "name": "Alice",
+      "role": "Admin"
+    },
+    {
+      "id": "3",
+      "name": "Bob",
+      "role": "Editor"
+    },
+    {
+      "id": "4",
+      "name": "Charlie",
+      "role": "Viewer"
+    },
+    {
+      "id": "5",
+      "name": "Diana",
+      "role": "Moderator"
+    },
+    {
+      "id": "6",
+      "name": "Eve",
+      "role": "Contributor"
     }
   ]
 }
