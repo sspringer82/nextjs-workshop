@@ -2,14 +2,17 @@
 
 Erzeuge ein Testsetup
 Pakete:
+
+```
 @vitejs/plugin-react
 @testing-library/jest-dom
 @testing-library/react
 jsdom
 vitest
+```
 
 package.json:
-`scripts: "Test": "vitest"``
+`scripts: "Test": "vitest"`
 
 vitest.config.ts
 
