@@ -23,6 +23,8 @@ https://github.com/sspringer82/nextjs-workshop
 - Ky - fetch Alternative: https://github.com/sindresorhus/ky
 - React Hook Form: https://react-hook-form.com/
 - Kent C. Dodds: https://kentcdodds.com/blog
+- E2E Testing: https://playwright.dev/
+- E2E Testing: https://www.cypress.io/
 
 ## Backend
 
