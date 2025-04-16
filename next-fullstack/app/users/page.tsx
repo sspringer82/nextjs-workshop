@@ -17,6 +17,7 @@ const UserPage: NextPage = async () => {
           </li>
         ))}
       </ul>
+      <Link href={'/users/form'}>machma neu</Link>
     </>
   );
 };
