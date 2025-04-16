@@ -44,7 +44,7 @@ const MoviesPage: NextPage = async () => {
             movies.map((movie) => <ListItem key={movie.id} movie={movie} />)}
         </tbody>
       </table>
-      <LinkButton title="Neu" path="/movies/form" />
+      <LinkButton title="Neu!" path="/movies/form" />
     </>
   );
 };

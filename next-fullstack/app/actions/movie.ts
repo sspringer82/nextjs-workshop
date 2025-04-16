@@ -2,7 +2,6 @@
 
 import { revalidatePath } from 'next/cache';
 import { remove } from '@/app/api/movie';
-import { json } from 'stream/consumers';
 import ky from 'ky';
 import { redirect } from 'next/navigation';
 import { Movie } from '@/types/Movie';

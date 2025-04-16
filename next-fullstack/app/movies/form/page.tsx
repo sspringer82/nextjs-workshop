@@ -5,7 +5,7 @@ import { NextPage } from 'next';
 import { useActionState } from 'react';
 
 const MovieFormPage: NextPage = () => {
-  const [error, submitAction, isPending] = useActionState<MyType, FormData>(
+  const [error, submitAction] = useActionState<MyType, FormData>(
     createMovie,
     null
   );

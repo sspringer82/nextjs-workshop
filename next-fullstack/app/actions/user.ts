@@ -39,7 +39,7 @@ export async function createUser(
     if (!response.ok) {
       return 'foo';
     }
-  } catch (error) {
+  } catch {
     return 'oh no!';
   }
   revalidatePath('/users');
