@@ -31,6 +31,7 @@ const MoviesPage: NextPage = async () => {
               <th>ID</th>
               <th>Title</th>
               <th>Year</th>
+              <th colSpan={2}></th>
             </tr>
           </thead>
           <tbody>
