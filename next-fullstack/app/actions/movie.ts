@@ -5,6 +5,7 @@ import { remove } from '@/app/api/movie';
 import { json } from 'stream/consumers';
 import ky from 'ky';
 import { redirect } from 'next/navigation';
+import { Movie } from '@/types/Movie';
 
 export async function deleteMovie(id: string): Promise<void> {
   await remove(id);
@@ -13,17 +14,15 @@ export async function deleteMovie(id: string): Promise<void> {
 
 export type MyType = {
   error: string;
-  values: { title: string; year: string };
+  values: Movie;
 } | null;
 
 export async function createMovie(
   errorState: MyType,
   formData: FormData
 ): Promise<MyType> {
-  const movie = {
-    title: formData.get('title')!.toString(),
-    year: formData.get('year')!.toString(),
-  };
+  const movie = Object.fromEntries(formData.entries()) as unknown as Movie;
+
   return {
     error: 'no',
     values: movie,

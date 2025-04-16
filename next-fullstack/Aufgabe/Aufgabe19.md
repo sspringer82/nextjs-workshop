@@ -9,3 +9,5 @@ Erzeuge ein Schema für die Validierung eines Movie Datensatzes.
 Tritt ein Validierungsfehler auf, füge die Fehlermeldung in den Rückgabewert (und den State) der `useActionState` ein.
 
 Zeige die Fehler beim jeweiligen Formularfeld an.
+
+`const movie = Object.fromEntries(formData.entries()) as unknown as Movie;`
