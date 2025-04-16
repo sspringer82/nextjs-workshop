@@ -10,9 +10,10 @@ const MovieFormPage: NextPage = () => {
     null
   );
 
+  console.log(error);
+
   return (
     <>
-      {error && <div>{error.error}</div>}
       <h1>Create new movie</h1>
       <form action={submitAction}>
         <div>
@@ -24,12 +25,18 @@ const MovieFormPage: NextPage = () => {
               defaultValue={error?.values.title}
             />
           </label>
+          {error?.error.title && (
+            <div style={{ color: 'red' }}>{error.error.title}</div>
+          )}
         </div>
         <div>
           <label>
             Year:{' '}
             <input type="text" name="year" defaultValue={error?.values.year} />
           </label>
+          {error?.error.year && (
+            <div style={{ color: 'red' }}>{error.error.year}</div>
+          )}
         </div>
         <button type="submit">save</button>
       </form>

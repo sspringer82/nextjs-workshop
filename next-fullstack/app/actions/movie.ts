@@ -6,6 +6,7 @@ import { json } from 'stream/consumers';
 import ky from 'ky';
 import { redirect } from 'next/navigation';
 import { Movie } from '@/types/Movie';
+import { movieSchema } from '../movies/movie.schema';
 
 export async function deleteMovie(id: string): Promise<void> {
   await remove(id);
@@ -13,7 +14,10 @@ export async function deleteMovie(id: string): Promise<void> {
 }
 
 export type MyType = {
-  error: string;
+  error: {
+    title?: string;
+    year?: string;
+  };
   values: Movie;
 } | null;
 
@@ -23,17 +27,37 @@ export async function createMovie(
 ): Promise<MyType> {
   const movie = Object.fromEntries(formData.entries()) as unknown as Movie;
 
-  return {
-    error: 'no',
-    values: movie,
-  };
+  const result = movieSchema.safeParse(movie);
+  if (result.success) {
+    const movieToCreate = result.data;
 
-  try {
-    await ky.post('http://localhost:3001/movies', { json: movie }).json();
-  } catch {
-    return 'Oh no';
+    await ky
+      .post('http://localhost:3001/movies', { json: movieToCreate })
+      .json();
+
+    revalidatePath('/movies');
+    redirect('/movies');
+  } else {
+    const errors: {
+      title?: string;
+      year?: string;
+    } = {};
+
+    const yearError = result.error.errors.find((e) => e.path.includes('year'));
+    if (yearError) {
+      errors.year = yearError.message;
+    }
+
+    const titleError = result.error.errors.find((e) =>
+      e.path.includes('title')
+    );
+    if (titleError) {
+      errors.title = titleError.message;
+    }
+
+    return {
+      error: errors,
+      values: movie,
+    };
   }
-
-  revalidatePath('/movies');
-  redirect('/movies');
 }

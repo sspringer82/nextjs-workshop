@@ -2,6 +2,7 @@ import { Movie } from '@/types/Movie';
 import { NextPage } from 'next';
 import { getAll } from './movie.api';
 import ListItem from './components/ListItem';
+import LinkButton from './components/LinkButton';
 
 const MoviesPage: NextPage = async () => {
   let movies: Movie[] = [];
@@ -24,27 +25,26 @@ const MoviesPage: NextPage = async () => {
   return (
     <>
       <h1>Movies list</h1>
-      <>
-        <table>
-          <thead>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th colSpan={2}></th>
+          </tr>
+        </thead>
+        <tbody>
+          {movies.length === 0 && (
             <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Year</th>
-              <th colSpan={2}></th>
+              <td colSpan={3}>Keine Daten gefunden</td>
             </tr>
-          </thead>
-          <tbody>
-            {movies.length === 0 && (
-              <tr>
-                <td colSpan={3}>Keine Daten gefunden</td>
-              </tr>
-            )}
-            {movies.length > 0 &&
-              movies.map((movie) => <ListItem key={movie.id} movie={movie} />)}
-          </tbody>
-        </table>
-      </>
+          )}
+          {movies.length > 0 &&
+            movies.map((movie) => <ListItem key={movie.id} movie={movie} />)}
+        </tbody>
+      </table>
+      <LinkButton title="Neu" path="/movies/form" />
     </>
   );
 };
