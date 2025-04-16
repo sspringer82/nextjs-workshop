@@ -22,7 +22,9 @@ export async function generateStaticParams() {
 
 const UserDetailPage: NextPage<Props> = async ({ params }) => {
   const { id } = await params;
-  return <h1 className="text-4xl font-bold">User Detail Page {id}</h1>;
+  return (
+    <h1 className="text-4xl font-bold"> User &quot;Detail&quot; Page {id}</h1>
+  );
 };
 
 export default UserDetailPage;

@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import DeleteButton from './components/DeleteButton';
 
 const UserPage: NextPage = async () => {
   const response = await fetch('http://localhost:3001/users');
@@ -12,6 +13,7 @@ const UserPage: NextPage = async () => {
         {users.map((user) => (
           <li key={user.id}>
             {user.name} <Link href={`/users/${user.id}`}>details</Link>
+            <DeleteButton id={user.id} />
           </li>
         ))}
       </ul>
