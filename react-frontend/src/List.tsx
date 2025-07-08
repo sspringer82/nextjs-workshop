@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { movies as movieData } from './movies';
 import ListItem from './ListItem';
 import type { Movie } from './types/Movie';
+import { getAllMovies } from './api/movie.api';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    setMovies(movieData);
+    getAllMovies()
+      .then((data) => {
+        setMovies(data);
+      })
+      .catch(() => {
+        setError('Oh nein, ein Fehler ist aufgetreten');
+      });
   }, []);
 
   function handleDeleteMovie(id: string) {
@@ -19,6 +26,8 @@ const List: React.FC = () => {
   return (
     <>
       <h1>Meine Filmliste</h1>
+
+      {error !== '' && <div>{error}</div>}
 
       <div>
         {movies.length === 0 ? (
