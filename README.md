@@ -24,3 +24,11 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 - Immutability Helper (der mit der komischen Syntax): https://github.com/kolodny/immutability-helper
 - Immer.js: https://immerjs.github.io/immer/
 - Immutablejs: https://immutable-js.com/
+
+## Backend
+
+1. Verzeichnis `backend` erstellen
+2. `data.json` ins `backend` Verzeichnis kopieren.
+3. `npm install json-server`
+4. `package.json` => `scripts` => `"backend": "json-server -p 3001 backend/data.json"`
+5. In einer separaten Konsole `npm run backend`
