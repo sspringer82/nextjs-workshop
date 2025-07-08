@@ -17,3 +17,10 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 6. dependencies installieren: `npm install`
 7. starten: `npm run dev`
 8. Browser öffnen: http://localhost:5173
+
+## Cloning
+
+- Structured Clone (JS basic): https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone
+- Immutability Helper (der mit der komischen Syntax): https://github.com/kolodny/immutability-helper
+- Immer.js: https://immerjs.github.io/immer/
+- Immutablejs: https://immutable-js.com/

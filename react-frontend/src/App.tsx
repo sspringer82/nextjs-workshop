@@ -1,16 +1,10 @@
 import './App.css';
-import List from './List';
-
-// function App(): React.ReactNode {
-//   return <section />;
-// }
-
-// export default App;
+import StateLifecycle from './StateLifecycle';
 
 const App: React.FC = () => {
   return (
     <div>
-      <List />
+      <StateLifecycle />
     </div>
   );
 };
