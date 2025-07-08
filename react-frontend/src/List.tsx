@@ -1,36 +1,23 @@
-const movies = [
-  { id: 1, title: 'Harry Potter' },
-  { id: 2, title: 'Star Wars' },
-  { id: 3, title: 'Star Trek' },
-];
-
-const name = 'Basti';
+import React from 'react';
+import { movies } from './movies';
 
 const List: React.FC = () => {
-  // if (name === 'Basti') {
-  //   return <div>Hallo Basti</div>;
-  // }
-
-  let content = '';
-  if (name === 'Basti') {
-    content = 'Hallo Basti';
-  }
-
   return (
-    <div>
-      <h1>Hallo {name}</h1>
+    <>
+      <h1>Meine Filmliste</h1>
 
-      {content}
-
-      {content === 'Basti' && <div>Hallo Basti</div>}
-
-      {content === 'Basti' ? <div>Hallo Basti</div> : <div>Hello Stranger</div>}
-      <ul>
-        {movies.map((movie) => {
-          return <li key={movie.id}>{movie.title}</li>;
-        })}
-      </ul>
-    </div>
+      <div>
+        {movies.length === 0 ? (
+          <strong>There are no movies</strong>
+        ) : (
+          movies.map((movie) => (
+            <div key={movie.id}>
+              {movie.title} ({movie.year})
+            </div>
+          ))
+        )}
+      </div>
+    </>
   );
 };
 
