@@ -3,6 +3,7 @@ type Props = {
   setName: (name: string) => void;
 };
 
+// const Child = ({ name, setName }: Props): React.ReactNode => {
 const Child: React.FC<Props> = ({ name, setName }) => {
   function handleChangeName() {
     setName('Roberta');
