@@ -6,6 +6,8 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 
 - https://github.com/facebook/create-react-app (deprecated)
 - Build system für React https://vite.dev/
+- Axios (HTTP Request) https://axios-http.com/docs/intro
+- ky (Axios Alternative) https://github.com/sindresorhus/ky
 
 ## Setup
 
