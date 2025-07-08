@@ -1,10 +1,10 @@
 import './App.css';
-import StateLifecycle from './StateLifecycle';
+import Parent from './Parent';
 
 const App: React.FC = () => {
   return (
     <div>
-      <StateLifecycle />
+      <Parent />
     </div>
   );
 };
