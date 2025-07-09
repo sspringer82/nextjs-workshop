@@ -1,5 +1,6 @@
 import { getAllMovies } from '@/api/movies.api';
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 const MoviesPage: NextPage = async () => {
   try {
@@ -14,7 +15,9 @@ const MoviesPage: NextPage = async () => {
         <ul>
           {movies.map((movie) => (
             <li key={movie.id}>
-              {movie.title} ({movie.year})
+              <Link href={`/movies/${movie.id}`} prefetch={false}>
+                {movie.title} ({movie.year})
+              </Link>
             </li>
           ))}
         </ul>

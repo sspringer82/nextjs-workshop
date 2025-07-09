@@ -1,5 +1,6 @@
 import { getAllUsers } from '@/api/users.api';
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 const UsersPage: NextPage = async () => {
   try {
@@ -13,7 +14,7 @@ const UsersPage: NextPage = async () => {
         <ul className="list-disc list-inside space-y-2">
           {users.map((user) => (
             <li key={user.id} className="text-lg text-gray-700">
-              {user.name}
+              <Link href={`/users/${user.id}`}>{user.name}</Link>
             </li>
           ))}
         </ul>
