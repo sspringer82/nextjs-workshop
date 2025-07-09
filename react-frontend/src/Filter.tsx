@@ -12,7 +12,7 @@ const Filter: React.FC<Props> = ({ setFilter, isControlled = false }) => {
   if (isControlled) {
     function handleFiltler(event: ChangeEvent<HTMLInputElement>) {
       setControlledFilter(event.target.value);
-      setFilter(event.target.value);
+      setFilter(event.target.value.toLowerCase());
     }
 
     return (
