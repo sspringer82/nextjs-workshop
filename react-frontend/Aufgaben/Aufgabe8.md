@@ -19,7 +19,7 @@ Form Element Registrierung: `<input {...register('firstName')} />`
 
 ```ts
 export async function createMovie(newMovie: CreateMovie): Promise<Movie> {
-  const response = await fetch(baseUrl, {
+  const response = await fetch('http://localhost:3001/movies', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
