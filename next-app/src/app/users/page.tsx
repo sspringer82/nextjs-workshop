@@ -10,9 +10,11 @@ const UsersPage: NextPage = async () => {
       content = <div>No users found</div>;
     } else {
       content = (
-        <ul>
+        <ul className="list-disc list-inside space-y-2">
           {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
+            <li key={user.id} className="text-lg text-gray-700">
+              {user.name}
+            </li>
           ))}
         </ul>
       );
@@ -20,12 +22,14 @@ const UsersPage: NextPage = async () => {
 
     return (
       <div>
-        <h1>User List</h1>
+        <h1 className="text-2xl font-bold text-center my-4">User List</h1>
         {content}
       </div>
     );
   } catch {
-    return <div>Oh noooo! 👻</div>;
+    <div className="text-red-500 text-center font-semibold mt-4">
+      Oh noooo! 👻
+    </div>;
   }
 };
 

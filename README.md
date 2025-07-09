@@ -12,6 +12,7 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - React Hook Form (das Gute): https://react-hook-form.com/
   - Formik (das nicht so Gute): https://formik.org/
   - React Hook Form Validierung: https://react-hook-form.com/get-started#SchemaValidation
+- VSCode plugin für React: ES7 React/Redux/GraphQL/React-Native snippets
 
 ## Setup
 
