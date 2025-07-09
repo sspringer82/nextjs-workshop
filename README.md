@@ -11,6 +11,7 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 - Formulare:
   - React Hook Form (das Gute): https://react-hook-form.com/
   - Formik (das nicht so Gute): https://formik.org/
+  - React Hook Form Validierung: https://react-hook-form.com/get-started#SchemaValidation
 
 ## Setup
 

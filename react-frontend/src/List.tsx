@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ListItem from './ListItem';
-import type { Movie } from './types/Movie';
-import { deleteMovieById, getAllMovies } from './api/movie.api';
+import type { CreateMovie, Movie } from './types/Movie';
+import { createMovie, deleteMovieById, getAllMovies } from './api/movie.api';
 import Filter from './Filter';
+import Form from './Form';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -32,6 +33,15 @@ const List: React.FC = () => {
     }
   }
 
+  async function handleSave(movie: CreateMovie) {
+    try {
+      const createdMovie = await createMovie(movie);
+      setMovies((prevMovies) => [...prevMovies, createdMovie]);
+    } catch {
+      setError('unable to create');
+    }
+  }
+
   return (
     <>
       <h1>Meine Filmliste</h1>
@@ -55,6 +65,8 @@ const List: React.FC = () => {
             ))
         )}
       </div>
+      <hr />
+      <Form onSave={handleSave} />
     </>
   );
 };

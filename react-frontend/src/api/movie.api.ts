@@ -1,4 +1,4 @@
-import type { Movie } from '../types/Movie';
+import type { CreateMovie, Movie } from '../types/Movie';
 
 import ky from 'ky';
 
@@ -19,4 +19,18 @@ export async function deleteMovieById(id: string): Promise<void> {
   if (!response.ok) {
     throw new Error('Whoops');
   }
+}
+
+export async function createMovie(movie: CreateMovie): Promise<Movie> {
+  const response = await fetch(`${baseUrl}/movies`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(movie),
+  });
+
+  if (!response.ok) {
+    throw new Error('unable to save');
+  }
+
+  return response.json();
 }
