@@ -4,12 +4,15 @@ import type { CreateMovie, Movie } from './types/Movie';
 import { createMovie, deleteMovieById, getAllMovies } from './api/movie.api';
 import Filter from './Filter';
 import Form from './Form';
+import { useDarkmodeContext } from './DarkmodeProvider';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState<string>('');
 
   const [filter, setFilter] = useState<string>('');
+
+  const [darkmode] = useDarkmodeContext();
 
   useEffect(() => {
     getAllMovies()
@@ -43,7 +46,12 @@ const List: React.FC = () => {
   }
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: darkmode ? 'black' : 'white',
+        color: darkmode ? 'white' : 'black',
+      }}
+    >
       <h1>Meine Filmliste</h1>
 
       {error !== '' && <div>{error}</div>}
@@ -67,7 +75,7 @@ const List: React.FC = () => {
       </div>
       <hr />
       <Form onSave={handleSave} />
-    </>
+    </div>
   );
 };
 

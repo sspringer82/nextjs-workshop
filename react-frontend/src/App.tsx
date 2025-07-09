@@ -1,10 +1,15 @@
 import './App.css';
+import { DarkmodeProvider } from './DarkmodeProvider';
 import List from './List';
+import SwitchDarkmode from './SwitchDarkmode';
 
 const App: React.FC = () => {
   return (
     <div>
-      <List />
+      <DarkmodeProvider>
+        <SwitchDarkmode />
+        <List />
+      </DarkmodeProvider>
     </div>
   );
 };
