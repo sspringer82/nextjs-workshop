@@ -6,8 +6,10 @@ Definiere dazu einen passenden Context Typ
 
 Erzeuge einen Provider und eine zugehörige Komponente, die die ihr übergebenen children rendert.
 
-generiere einen customHook für den Zugriff auf den Context
+generiere einen customHook für den Zugriff auf den Context (`useMovieContext`)
 
-Binde den Context in die List-Komponente ein
+Füge den Provider in die App-Komponente (als Elternkomponente der List) ein.
+
+Binde den Context in die List-Komponente ein und ersetze useState durch den Aufruf von `useMovieContext` (beide sind API-kompatibel)
 
 Erzeuge eine zusätzliche Komponente, die die Anzahl der Movies anzeigt. Diese Komponente soll keine Kindkomponte der Liste sein.
