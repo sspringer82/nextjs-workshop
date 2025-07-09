@@ -8,6 +8,9 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 - Build system für React https://vite.dev/
 - Axios (HTTP Request) https://axios-http.com/docs/intro
 - ky (Axios Alternative) https://github.com/sindresorhus/ky
+- Formulare:
+  - React Hook Form (das Gute): https://react-hook-form.com/
+  - Formik (das nicht so Gute): https://formik.org/
 
 ## Setup
 

@@ -13,3 +13,10 @@ export async function getAllMovies(): Promise<Movie[]> {
   // }
   // return response.json();
 }
+
+export async function deleteMovieById(id: string): Promise<void> {
+  const response = await fetch(`${baseUrl}/movies/${id}`, { method: 'DELETE' });
+  if (!response.ok) {
+    throw new Error('Whoops');
+  }
+}
