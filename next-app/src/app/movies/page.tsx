@@ -1,6 +1,7 @@
 import { getAllMovies } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { H1 } from './style';
 
 const MoviesPage: NextPage = async () => {
   try {
@@ -26,7 +27,7 @@ const MoviesPage: NextPage = async () => {
 
     return (
       <div>
-        <h1>Movie list</h1>
+        <H1>Movie list</H1>
         {content}
       </div>
     );
