@@ -8,7 +8,7 @@ type Props = {
 const UsersDetailPage: NextPage<Props> = async ({ params }) => {
   const { userId } = await params;
 
-  const user = await getUserById(userId, 10_000);
+  const user = await getUserById(userId, 1);
 
   return <h1>Hello {user.name}</h1>;
 };

@@ -9,13 +9,17 @@ export async function getAllUsers(): Promise<User[]> {
 }
 
 export async function getUserById(id: string, delay = 2_000): Promise<User> {
-  return new Promise(async (resolve) => {
+  return new Promise(async (resolve, reject) => {
     setTimeout(async () => {
-      const response = await fetch(`http://localhost:3001/users/${id}`);
-      if (!response.ok) {
-        throw new Error(`unable to get user with id ${id}`);
+      try {
+        const response = await fetch(`http://localhost:3001/users/${id}`);
+        if (!response.ok) {
+          throw new Error(`unable to get user with id ${id}`);
+        }
+        resolve(await response.json());
+      } catch (error) {
+        reject(error);
       }
-      resolve(await response.json());
     }, delay);
   });
 }

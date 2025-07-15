@@ -1,4 +1,4 @@
-import { getAllMovies, getAllMoviesDelayed } from '@/api/movies.api';
+import { getAllMoviesDelayed } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Filter from './Filter';
 
