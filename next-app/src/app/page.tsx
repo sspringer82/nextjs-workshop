@@ -1,3 +1,5 @@
+'use client';
+
 export default function Home() {
-  return <h1>Hallo Welt!!</h1>;
+  return <h1 onClick={() => alert('foo')}>Hallo Welt!!</h1>;
 }

@@ -1,0 +1,14 @@
+.myButton {
+  border: 1px solid black;
+  background-color: lightgrey;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
+
+button.warning {
+  color: red;
+  font-weight: bold;
+  background-color: lightcoral;
+}

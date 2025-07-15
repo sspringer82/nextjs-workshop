@@ -13,6 +13,12 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - Formik (das nicht so Gute): https://formik.org/
   - React Hook Form Validierung: https://react-hook-form.com/get-started#SchemaValidation
 - VSCode plugin für React: ES7 React/Redux/GraphQL/React-Native snippets
+- Thinking in React https://react.dev/learn/thinking-in-react
+- "Dynamic functions" in next https://nextjs.org/docs/messages/sync-dynamic-apis
+- STyling (https://nextjs.org/docs/app/getting-started/css)
+  - Klassennamen: https://github.com/lukeed/clsx oder https://github.com/JedWatson/classnames
+  - https://sass-lang.com/
+  - https://styled-components.com/
 
 ## Setup
 
