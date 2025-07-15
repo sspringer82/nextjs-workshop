@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 
 const router = useRouter();
 
-router.push(`/movies/filter?query=${encodeURIComponent(query)}`);
+router.push(`/filter?query=${encodeURIComponent(query)}`);
 ```
 
 Nutze die searchParams-Prop, um auf die Suchparameter zuzugreifen:
