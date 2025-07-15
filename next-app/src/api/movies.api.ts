@@ -36,6 +36,11 @@ export async function getMovieByIdDelayed(
     setTimeout(async () => {
       try {
         const response = await fetch(`http://localhost:3001/movies/${id}`);
+
+        if (response.status === 404) {
+          throw new Error('Not Found');
+        }
+
         if (!response.ok) {
           throw new Error(`unable to get movie with ${id}`);
         }

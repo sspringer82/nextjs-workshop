@@ -1,12 +1,6 @@
 'use client';
 
-import { DotLoader } from 'react-spinners';
-
 const Loading: React.FC = () => {
-  return (
-    <div>
-      <DotLoader />
-    </div>
-  );
+  return <div>Loading...</div>;
 };
 export default Loading;
