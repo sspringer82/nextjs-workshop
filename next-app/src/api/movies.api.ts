@@ -27,3 +27,18 @@ export async function getMovieById(id: string): Promise<Movie> {
   }
   return response.json();
 }
+
+export async function getMovieByIdDelayed(
+  id: string,
+  timeout = 2000
+): Promise<Movie[]> {
+  return new Promise((resolve) => {
+    setTimeout(async () => {
+      const response = await fetch(`http://localhost:3001/movies/${id}`);
+      if (!response.ok) {
+        throw new Error(`unable to get movie with ${id}`);
+      }
+      resolve(response.json());
+    }, timeout);
+  });
+}
