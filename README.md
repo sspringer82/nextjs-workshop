@@ -19,6 +19,11 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - Klassennamen: https://github.com/lukeed/clsx oder https://github.com/JedWatson/classnames
   - https://sass-lang.com/
   - https://styled-components.com/
+- Suspense
+  - Suspense: https://react.dev/reference/react/Suspense
+  - Lazy Loading: https://react.dev/reference/react/lazy
+  - Data Fetching (React-query): https://tanstack.com/query/latest
+  - https://www.davidhu.io/react-spinners/
 
 ## Setup
 
