@@ -1,4 +1,4 @@
-import { getMovieById } from '@/api/movies.api';
+import { getMovieByIdDelayed } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ type Props = {
 const MoviesDetailPage: NextPage<Props> = async ({ params }) => {
   const { id } = await params;
 
-  const movie = await getMovieById(id);
+  const movie = await getMovieByIdDelayed(id, 5_000);
 
   return (
     <div>

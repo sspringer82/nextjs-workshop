@@ -1,4 +1,4 @@
-import { getAllMovies } from '@/api/movies.api';
+import { getAllMovies, getAllMoviesDelayed } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Filter from './Filter';
 
@@ -11,7 +11,7 @@ const FilterPage: NextPage<Props> = async ({ searchParams }) => {
 
   const filterString = filter || '';
 
-  const movies = await getAllMovies();
+  const movies = await getAllMoviesDelayed(10_000);
 
   return (
     <>
