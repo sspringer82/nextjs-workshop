@@ -31,7 +31,7 @@ export async function getMovieById(id: string): Promise<Movie> {
 export async function getMovieByIdDelayed(
   id: string,
   timeout = 2000
-): Promise<Movie[]> {
+): Promise<Movie> {
   return new Promise((resolve) => {
     setTimeout(async () => {
       const response = await fetch(`http://localhost:3001/movies/${id}`);
