@@ -24,6 +24,7 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - Lazy Loading: https://react.dev/reference/react/lazy
   - Data Fetching (React-query): https://tanstack.com/query/latest
   - https://www.davidhu.io/react-spinners/
+- https://nextjs.org/docs/app/api-reference/file-conventions
 
 ## Setup
 
