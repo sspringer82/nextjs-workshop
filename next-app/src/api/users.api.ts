@@ -23,3 +23,12 @@ export async function getUserById(id: string, delay = 2_000): Promise<User> {
     }, delay);
   });
 }
+
+export async function deleteUser(id: string): Promise<void> {
+  const response = await fetch(`http://localhost:3001/users/${id}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error(`unable to delete user with id ${id}`);
+  }
+}

@@ -1,6 +1,7 @@
 import { getAllUsers } from '@/api/users.api';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import DeleteButton from './DeleteButton';
 
 const UsersPage: NextPage = async () => {
   try {
@@ -15,6 +16,7 @@ const UsersPage: NextPage = async () => {
           {users.map((user) => (
             <li key={user.id} className="text-lg text-gray-700">
               <Link href={`/users/${user.id}`}>{user.name}</Link>
+              <DeleteButton id={user.id} />
             </li>
           ))}
         </ul>
