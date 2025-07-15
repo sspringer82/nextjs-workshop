@@ -9,7 +9,7 @@ type Props = {
 const MoviesDetailPage: NextPage<Props> = async ({ params }) => {
   const { id } = await params;
 
-  const movie = await getMovieByIdDelayed(id, 5_000);
+  const movie = await getMovieByIdDelayed(id, 10);
 
   return (
     <div>

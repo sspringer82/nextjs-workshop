@@ -13,7 +13,9 @@ const ErrorComponent: React.FC = () => {
     <div>
       <button
         style={{ border: '2px solid red' }}
-        onClick={() => setError(true)}
+        onClick={() => {
+          setError(true);
+        }}
       >
         Trigger Error
       </button>

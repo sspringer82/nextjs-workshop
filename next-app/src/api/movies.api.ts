@@ -32,13 +32,17 @@ export async function getMovieByIdDelayed(
   id: string,
   timeout = 2000
 ): Promise<Movie> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(async () => {
-      const response = await fetch(`http://localhost:3001/movies/${id}`);
-      if (!response.ok) {
-        throw new Error(`unable to get movie with ${id}`);
+      try {
+        const response = await fetch(`http://localhost:3001/movies/${id}`);
+        if (!response.ok) {
+          throw new Error(`unable to get movie with ${id}`);
+        }
+        resolve(response.json());
+      } catch (error) {
+        reject(error);
       }
-      resolve(response.json());
     }, timeout);
   });
 }
