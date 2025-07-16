@@ -1,7 +1,9 @@
 import { CreateMovie, Movie } from '@/types/Movie';
 
+const BASE_URL = process.env.BACKEND_URL;
+
 export async function getAllMovies(): Promise<Movie[]> {
-  const response = await fetch('http://localhost:3001/movies', {
+  const response = await fetch(`${BASE_URL}/movies`, {
     next: { tags: ['movie'] },
   });
   if (!response.ok) {
@@ -13,7 +15,7 @@ export async function getAllMovies(): Promise<Movie[]> {
 export async function getAllMoviesDelayed(timeout = 2000): Promise<Movie[]> {
   return new Promise((resolve) => {
     setTimeout(async () => {
-      const response = await fetch('http://localhost:3001/movies');
+      const response = await fetch(`${BASE_URL}/movies`);
       if (!response.ok) {
         throw new Error('unable to get all movies');
       }
@@ -23,7 +25,7 @@ export async function getAllMoviesDelayed(timeout = 2000): Promise<Movie[]> {
 }
 
 export async function getMovieById(id: string): Promise<Movie> {
-  const response = await fetch(`http://localhost:3001/movies/${id}`);
+  const response = await fetch(`${BASE_URL}/movies/${id}`);
   if (!response.ok) {
     throw new Error(`unable to get movie with ${id}`);
   }
@@ -37,7 +39,7 @@ export async function getMovieByIdDelayed(
   return new Promise((resolve, reject) => {
     setTimeout(async () => {
       try {
-        const response = await fetch(`http://localhost:3001/movies/${id}`);
+        const response = await fetch(`${BASE_URL}/movies/${id}`);
 
         if (response.status === 404) {
           throw new Error('Not Found');
@@ -55,7 +57,7 @@ export async function getMovieByIdDelayed(
 }
 
 export async function deleteMovie(id: string): Promise<void> {
-  const response = await fetch(`http://localhost:3001/movies/${id}`, {
+  const response = await fetch(`${BASE_URL}/movies/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {
@@ -64,7 +66,7 @@ export async function deleteMovie(id: string): Promise<void> {
 }
 
 export async function createMovie(movie: CreateMovie): Promise<Movie> {
-  const response = await fetch('http://localhost:3001/movies', {
+  const response = await fetch(`${BASE_URL}/movies`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

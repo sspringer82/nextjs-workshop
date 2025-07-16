@@ -5,7 +5,7 @@ import ky from 'ky';
 const baseUrl = 'http://localhost:3001';
 
 export async function getAllMovies(): Promise<Movie[]> {
-  return ky.get(`${baseUrl}/movies`).json();
+  return ky.get(`http://localhost:3000/movies`).json();
 
   // const response = await fetch(`${baseUrl}/movies`);
   // if (!response.ok) {

@@ -29,6 +29,16 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - https://mui.com/material-ui
   - https://react-bootstrap.netlify.app/
   - https://ui.shadcn.com/
+- Testing
+  - https://vitest.dev/
+  - https://jestjs.io/
+  - https://testing-library.com/docs/react-testing-library/intro
+  - https://vitest.dev/guide/browser/
+  - https://github.com/vitest-dev/vitest-browser-react
+  - https://playwright.dev/
+  - https://www.cypress.io/
+  - https://mswjs.io/
+  - https://testcontainers.com/
 
 ## Setup
 
