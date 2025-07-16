@@ -97,10 +97,6 @@
     },
     {
       "id": "f1f2",
-      "$ACTION_REF_1": "",
-      "$ACTION_1:0": "{\"id\":\"603e58d1ba890fd46860ea691d06506ddab3799b21\",\"bound\":\"$@1\"}",
-      "$ACTION_1:1": "[{\"error\":\"\"}]",
-      "$ACTION_KEY": "k3068315973",
       "title": "test1",
       "year": "1111"
     },
@@ -165,6 +161,98 @@
       "id": "3b76",
       "name": "asdf",
       "role": "asdf"
+    }
+  ],
+  "actors": [
+    {
+      "id": "a1",
+      "firstname": "Leonardo",
+      "lastname": "DiCaprio",
+      "yearofbirth": 1974
+    },
+    {
+      "id": "a2",
+      "firstname": "Morgan",
+      "lastname": "Freeman",
+      "yearofbirth": 1937
+    },
+    {
+      "id": "a3",
+      "firstname": "Brad",
+      "lastname": "Pitt",
+      "yearofbirth": 1963
+    },
+    {
+      "id": "a4",
+      "firstname": "Tom",
+      "lastname": "Hanks",
+      "yearofbirth": 1956
+    },
+    {
+      "id": "a5",
+      "firstname": "Natalie",
+      "lastname": "Portman",
+      "yearofbirth": 1981
+    },
+    {
+      "id": "a6",
+      "firstname": "Robert",
+      "lastname": "De Niro",
+      "yearofbirth": 1943
+    },
+    {
+      "id": "a7",
+      "firstname": "Scarlett",
+      "lastname": "Johansson",
+      "yearofbirth": 1984
+    },
+    {
+      "id": "a8",
+      "firstname": "Samuel",
+      "lastname": "Jackson",
+      "yearofbirth": 1948
+    },
+    {
+      "id": "a9",
+      "firstname": "Meryl",
+      "lastname": "Streep",
+      "yearofbirth": 1949
+    },
+    {
+      "id": "a10",
+      "firstname": "Christian",
+      "lastname": "Bale",
+      "yearofbirth": 1974
+    },
+    {
+      "id": "a11",
+      "firstname": "Harrison",
+      "lastname": "Ford",
+      "yearofbirth": 1942
+    },
+    {
+      "id": "a12",
+      "firstname": "Angelina",
+      "lastname": "Jolie",
+      "yearofbirth": 1975
+    },
+    {
+      "id": "a13",
+      "firstname": "Matt",
+      "lastname": "Damon",
+      "yearofbirth": 1970
+    },
+    {
+      "id": "a14",
+      "firstname": "Anthony",
+      "lastname": "Hopkins",
+      "yearofbirth": 1937
+    },
+    {
+      "id": "a15",
+      "firstname": "Kate",
+      "lastname": "Winslet",
+      "yearofbirth": 1975
     }
   ]
 }
