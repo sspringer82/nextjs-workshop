@@ -25,6 +25,10 @@ Repository: https://github.com/sspringer82/nextjs-workshop
   - Data Fetching (React-query): https://tanstack.com/query/latest
   - https://www.davidhu.io/react-spinners/
 - https://nextjs.org/docs/app/api-reference/file-conventions
+- Component Libraries
+  - https://mui.com/material-ui
+  - https://react-bootstrap.netlify.app/
+  - https://ui.shadcn.com/
 
 ## Setup
 

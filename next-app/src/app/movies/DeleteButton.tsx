@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { deleteMovie } from '@/functions/movie.function';
 
 type Props = {
@@ -8,9 +9,9 @@ type Props = {
 
 const DeleteButton: React.FC<Props> = ({ id }) => {
   return (
-    <button className="border px-3 py-1" onClick={() => deleteMovie(id)}>
+    <Button variant="destructive" onClick={() => deleteMovie(id)}>
       löschen
-    </button>
+    </Button>
   );
 };
 
