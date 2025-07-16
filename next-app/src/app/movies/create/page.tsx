@@ -9,9 +9,12 @@ import { NextPage } from 'next';
 import { useActionState } from 'react';
 
 const CreateMoviePage: NextPage = () => {
-  const [, submitAction] = useActionState<MovieForm, FormData>(createMovie, {
-    error: '',
-  });
+  const [error, submitAction] = useActionState<MovieForm, FormData>(
+    createMovie,
+    {
+      error: null,
+    }
+  );
 
   return (
     <div>
@@ -19,9 +22,15 @@ const CreateMoviePage: NextPage = () => {
       <form action={submitAction}>
         <Label htmlFor="title">Title</Label>
         <Input type="text" name="title" />
+        {error?.error?.title && (
+          <div className="text-red-500">{error.error.title}</div>
+        )}
         <br />
         <Label htmlFor="year">Year</Label>
         <Input type="number" name="year" />
+        {error?.error?.year && (
+          <div className="text-red-500">{error.error.year}</div>
+        )}
         <br />
         <Button type="submit">Create</Button>
       </form>
