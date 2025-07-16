@@ -59,3 +59,10 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 # Shadcn
 
 https://github.com/sspringer82/nextjs-workshop/commit/85699fcbeeb0a91cd368caf41225ae9e4140b99c
+
+- next-app/components.json => anlegen und kopieren
+- Pakete installieren: `npm install @radix-ui/react-slot class-variance-authority lucide-react tailwind-merge``
+- src/app/globals.css => überschreiben
+- src/components/ui/button.tsx => anlegen und kopieren
+- src/components/ui/table.tsx => anlegen und kopieren
+- src/lib/utils.ts => anlegen und kopieren
