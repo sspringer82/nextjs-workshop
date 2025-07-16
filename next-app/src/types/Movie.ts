@@ -5,3 +5,7 @@ export type Movie = {
 };
 
 export type CreateMovie = Omit<Movie, 'id'>;
+
+export type MovieForm = {
+  error: string;
+};

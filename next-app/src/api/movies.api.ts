@@ -1,4 +1,4 @@
-import { Movie } from '@/types/Movie';
+import { CreateMovie, Movie } from '@/types/Movie';
 
 export async function getAllMovies(): Promise<Movie[]> {
   const response = await fetch('http://localhost:3001/movies', {
@@ -61,4 +61,18 @@ export async function deleteMovie(id: string): Promise<void> {
   if (!response.ok) {
     throw new Error(`unable to delete movie with id ${id}`);
   }
+}
+
+export async function createMovie(movie: CreateMovie): Promise<Movie> {
+  const response = await fetch('http://localhost:3001/movies', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(movie),
+  });
+  if (!response.ok) {
+    throw new Error('unable to create movie');
+  }
+  return response.json();
 }

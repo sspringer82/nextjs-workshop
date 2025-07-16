@@ -54,6 +54,7 @@ const MoviesPage: NextPage = async () => {
       <div>
         <H1>Movie list</H1>
         {content}
+        <Link href="/movies/create">Create new movie</Link>
       </div>
     );
   } catch {
