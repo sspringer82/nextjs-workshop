@@ -18,4 +18,4 @@ Implementiere die createMovie-Funktion als Server Function `use server`
 
 Speichere die Daten mit einem POST-Request im Backend
 
-leite den Client mit `useRouter` und `router.push` auf die Liste zurück.
+nutze redirect in der Server Function für die Weiterleitung auf die Liste https://nextjs.org/docs/app/api-reference/functions/redirect
