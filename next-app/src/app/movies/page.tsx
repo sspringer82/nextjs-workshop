@@ -2,7 +2,6 @@ import { getAllMovies } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { H1 } from './style';
-import DeleteButton from './DeleteButton';
 import {
   Table,
   TableCaption,
@@ -12,9 +11,6 @@ import {
   TableBody,
   TableCell,
 } from '@/components/ui/table';
-import { Trash2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { deleteMovie } from '@/functions/movie.function';
 import DeleteForm from './DeleteForm';
 
 const MoviesPage: NextPage = async () => {
