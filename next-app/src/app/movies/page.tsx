@@ -3,6 +3,15 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { H1 } from './style';
 import DeleteButton from './DeleteButton';
+import {
+  Table,
+  TableCaption,
+  TableHeader,
+  TableRow,
+  TableHead,
+  TableBody,
+  TableCell,
+} from '@/components/ui/table';
 
 const MoviesPage: NextPage = async () => {
   try {
@@ -14,16 +23,29 @@ const MoviesPage: NextPage = async () => {
       content = <div>No movies found</div>;
     } else {
       content = (
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>
-              <Link href={`/movies/${movie.id}`} prefetch={false}>
-                {movie.title} ({movie.year})
-              </Link>
-              <DeleteButton id={movie.id} />
-            </li>
-          ))}
-        </ul>
+        <Table>
+          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Title</TableHead>
+              <TableHead>Year</TableHead>
+              <TableHead></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {movies.map((movie) => (
+              <TableRow key={movie.id}>
+                <TableCell>
+                  <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+                </TableCell>
+                <TableCell>{movie.year}</TableCell>
+                <TableCell>
+                  <DeleteButton id={movie.id} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       );
     }
 
