@@ -12,6 +12,10 @@ import {
   TableBody,
   TableCell,
 } from '@/components/ui/table';
+import { Trash2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { deleteMovie } from '@/functions/movie.function';
+import DeleteForm from './DeleteForm';
 
 const MoviesPage: NextPage = async () => {
   try {
@@ -40,7 +44,8 @@ const MoviesPage: NextPage = async () => {
                 </TableCell>
                 <TableCell>{movie.year}</TableCell>
                 <TableCell>
-                  <DeleteButton id={movie.id} />
+                  <DeleteForm id={movie.id} />
+                  {/* <DeleteButton id={movie.id} /> */}
                 </TableCell>
               </TableRow>
             ))}
