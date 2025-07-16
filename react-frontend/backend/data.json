@@ -1,44 +1,9 @@
 {
   "movies": [
     {
-      "id": "1a2b3c",
-      "title": "Inception",
-      "year": 2010
-    },
-    {
-      "id": "2b3c4d",
-      "title": "The Matrix",
-      "year": 1999
-    },
-    {
-      "id": "3c4d5e",
-      "title": "Interstellar",
-      "year": 2014
-    },
-    {
-      "id": "4d5e6f",
-      "title": "The Dark Knight",
-      "year": 2025
-    },
-    {
-      "id": "5e6f7g",
-      "title": "Pulp Fiction",
-      "year": 1994
-    },
-    {
-      "id": "da85",
-      "title": "Bambi",
-      "year": "1965"
-    },
-    {
       "id": "6a7b8c",
       "title": "Forrest Gump",
       "year": 1994
-    },
-    {
-      "id": "7b8c9d",
-      "title": "The Godfather",
-      "year": 1972
     },
     {
       "id": "8c9d0e",

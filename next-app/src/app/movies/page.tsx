@@ -2,6 +2,7 @@ import { getAllMovies } from '@/api/movies.api';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { H1 } from './style';
+import DeleteButton from './DeleteButton';
 
 const MoviesPage: NextPage = async () => {
   try {
@@ -19,6 +20,7 @@ const MoviesPage: NextPage = async () => {
               <Link href={`/movies/${movie.id}`} prefetch={false}>
                 {movie.title} ({movie.year})
               </Link>
+              <DeleteButton id={movie.id} />
             </li>
           ))}
         </ul>
