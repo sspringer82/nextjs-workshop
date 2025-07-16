@@ -38,17 +38,26 @@ export async function createMovie(
   const parsed = createMovieSchema.safeParse(newMovie);
 
   if (!parsed.success) {
-    const errors = z.treeifyError(parsed.error);
+    const errors = z.flattenError(parsed.error);
 
     return {
       error: {
-        title: errors.properties?.title?.errors.toString() || '',
-        year: errors.properties?.year?.errors.toString() || '',
+        title: errors.fieldErrors?.title?.join(' ') || '',
+        year: errors.fieldErrors?.year?.join(' ') || '',
       },
+      values: newMovie,
     };
   }
 
-  createMovieApi(parsed.data);
+  try {
+    await createMovieApi(parsed.data);
+  } catch {
+    return {
+      serverError: 'Failed to create movie',
+      error: null,
+      values: newMovie,
+    };
+  }
 
   revalidatePath('/movies');
   redirect('/movies');
