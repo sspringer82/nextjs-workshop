@@ -55,3 +55,7 @@ Repository: https://github.com/sspringer82/nextjs-workshop
 3. `npm install json-server`
 4. `package.json` => `scripts` => `"backend": "json-server -p 3001 backend/data.json"`
 5. In einer separaten Konsole `npm run backend`
+
+# Shadcn
+
+https://github.com/sspringer82/nextjs-workshop/commit/85699fcbeeb0a91cd368caf41225ae9e4140b99c
