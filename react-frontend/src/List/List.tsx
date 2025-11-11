@@ -1,5 +1,6 @@
 import React, { useEffect, useState, type ReactNode } from 'react';
 import type { Movie } from '../types/Movie';
+import ListItem from './ListItem';
 
 const initialMovies: Movie[] = [
   { id: 1, title: 'Die Schlümpfe', year: 2011 },
@@ -30,10 +31,7 @@ const List: React.FC = () => {
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <tr key={movie.id}>
-              <td>{movie.title}</td>
-              <td>{movie.year}</td>
-            </tr>
+            <ListItem key={movie.id} movie={movie} />
           ))}
         </tbody>
       </table>
