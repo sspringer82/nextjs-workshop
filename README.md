@@ -16,6 +16,7 @@ npm run dev
 Links:
 
 - https://react.dev/learn/thinking-in-react
+- https://overreacted.io/a-complete-guide-to-useeffect/
 
 Komponenten:
 
