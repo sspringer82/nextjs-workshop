@@ -16,6 +16,13 @@ const List: React.FC = () => {
     }, 1_000);
   }, []);
 
+  function handleDelete(id: number) {
+    setMovies((prevMovies) => {
+      const clone = structuredClone(prevMovies);
+      return clone.filter((movie) => movie.id !== id);
+    });
+  }
+
   let content: ReactNode;
 
   if (movies.length === 0) {
@@ -31,7 +38,7 @@ const List: React.FC = () => {
         </thead>
         <tbody>
           {movies.map((movie) => (
-            <ListItem key={movie.id} movie={movie} />
+            <ListItem key={movie.id} movie={movie} onDelete={handleDelete} />
           ))}
         </tbody>
       </table>
