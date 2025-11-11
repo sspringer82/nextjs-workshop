@@ -30,3 +30,4 @@ Backend:
 1. `npm install json-server`
 2. `react-frontend/data.json` aus dem repo kopieren (https://github.com/sspringer82/nextjs-workshop)
 3. `npx json-server -p 3001 data.json`
+4. parallel dazu `npm run dev`

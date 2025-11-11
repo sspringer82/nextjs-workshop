@@ -11,9 +11,10 @@ const initialMovies: Movie[] = [
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
-    setTimeout(() => {
-      setMovies(initialMovies);
-    }, 1_000);
+    // setTimeout(() => {
+    //   setMovies(initialMovies);
+    // }, 1_000);
+    // data fetching
   }, []);
 
   function handleDelete(id: number) {
