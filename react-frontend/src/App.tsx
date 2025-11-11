@@ -1,7 +1,8 @@
-import Parent from './children/Parent';
+import Delete from './examples/Delete';
+import List from './List/List';
 
 const App: React.FC = () => {
-  return <Parent />;
+  return <Delete />;
 };
 
 export default App;

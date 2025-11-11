@@ -1,13 +1,20 @@
-import React, { type ReactNode } from 'react';
+import React, { useEffect, useState, type ReactNode } from 'react';
 import type { Movie } from '../types/Movie';
 
-const movies: Movie[] = [
+const initialMovies: Movie[] = [
   { id: 1, title: 'Die Schlümpfe', year: 2011 },
   { id: 2, title: 'Shrek', year: 2001 },
   { id: 3, title: 'Toy Story', year: 1995 },
 ];
 
 const List: React.FC = () => {
+  const [movies, setMovies] = useState<Movie[]>([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setMovies(initialMovies);
+    }, 1_000);
+  }, []);
+
   let content: ReactNode;
 
   if (movies.length === 0) {
