@@ -16,3 +16,10 @@ npm run dev
 Links:
 
 - https://react.dev/learn/thinking-in-react
+
+Komponenten:
+
+- Name beginnt mit einem Großbuchstaben
+- Komponente ist eine Funktion, die JSX zurückgibt
+- Eine Komponente pro Datei
+- Die Komponentendatei heißt wie die Komponente
