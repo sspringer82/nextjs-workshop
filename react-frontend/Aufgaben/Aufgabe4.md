@@ -23,3 +23,12 @@ function deleteMe(id: string) {}
 
 (id: string) => void
 ```
+
+```tsx
+<ListItem movie={movie} onDelete={handleDelete}>
+
+type Props = {
+  movie: Movie;
+  onDelete: (id: string) => void
+}
+```
