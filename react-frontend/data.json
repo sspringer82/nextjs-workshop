@@ -1,0 +1,166 @@
+{
+  "movies": [
+    {
+      "id": "1a2b3c",
+      "title": "Inception",
+      "year": 2010
+    },
+    {
+      "id": "2b3c4d",
+      "title": "The Matrix",
+      "year": 1999
+    },
+    {
+      "id": "3c4d5e",
+      "title": "Interstellar",
+      "year": 2014
+    },
+    {
+      "id": "4d5e6f",
+      "title": "The Dark Knight",
+      "year": 2025
+    },
+    {
+      "id": "5e6f7g",
+      "title": "Pulp Fiction",
+      "year": 1994
+    },
+    {
+      "id": "da85",
+      "title": "Bambi",
+      "year": "1965"
+    },
+    {
+      "id": "6a7b8c",
+      "title": "Forrest Gump",
+      "year": 1994
+    },
+    {
+      "id": "7b8c9d",
+      "title": "The Godfather",
+      "year": 1972
+    },
+    {
+      "id": "8c9d0e",
+      "title": "Fight Club",
+      "year": 1999
+    },
+    {
+      "id": "9d0e1f",
+      "title": "The Shawshank Redemption",
+      "year": 1994
+    },
+    {
+      "id": "0e1f2g",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": 2001
+    },
+    {
+      "id": "1f2g3h",
+      "title": "The Lord of the Rings: The Two Towers",
+      "year": 2002
+    },
+    {
+      "id": "2g3h4i",
+      "title": "The Lord of the Rings: The Return of the King",
+      "year": 2003
+    },
+    {
+      "id": "3h4i5j",
+      "title": "Star Wars: Episode IV - A New Hope",
+      "year": 1977
+    },
+    {
+      "id": "4i5j6k",
+      "title": "Star Wars: Episode V - The Empire Strikes Back",
+      "year": 1980
+    },
+    {
+      "id": "5j6k7l",
+      "title": "Star Wars: Episode VI - Return of the Jedi",
+      "year": 1983
+    },
+    {
+      "id": "6k7l8m",
+      "title": "Jurassic Park",
+      "year": 1993
+    },
+    {
+      "id": "7l8m9n",
+      "title": "Gladiator",
+      "year": 2000
+    },
+    {
+      "id": "8m9n0o",
+      "title": "Titanic",
+      "year": 1997
+    },
+    {
+      "id": "9n0o1p",
+      "title": "Avatar",
+      "year": 2009
+    },
+    {
+      "id": "0o1p2q",
+      "title": "The Silence of the Lambs",
+      "year": 1991
+    },
+    {
+      "id": "1p2q3r",
+      "title": "Saving Private Ryan",
+      "year": 1998
+    },
+    {
+      "id": "2q3r4s",
+      "title": "Schindler's List",
+      "year": 1993
+    },
+    {
+      "id": "3r4s5t",
+      "title": "Goodfellas",
+      "year": 1990
+    },
+    {
+      "id": "4s5t6u",
+      "title": "Back to the Future",
+      "year": 1985
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Basti",
+      "role": "SuperAdmin"
+    },
+    {
+      "id": "9ec1",
+      "name": "asdf",
+      "role": "asdf"
+    },
+    {
+      "id": "cd2d",
+      "name": "asdf",
+      "role": "asdfa"
+    },
+    {
+      "id": "a041",
+      "name": "asdf",
+      "role": "asdf"
+    },
+    {
+      "id": "3427",
+      "name": "asdf",
+      "role": "asdf"
+    },
+    {
+      "id": "3767",
+      "name": "asdf",
+      "role": "adsf"
+    },
+    {
+      "id": "3b76",
+      "name": "asdf",
+      "role": "asdf"
+    }
+  ]
+}

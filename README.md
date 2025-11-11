@@ -24,3 +24,9 @@ Komponenten:
 - Komponente ist eine Funktion, die JSX zurückgibt
 - Eine Komponente pro Datei
 - Die Komponentendatei heißt wie die Komponente
+
+Backend:
+
+1. `npm install json-server`
+2. `data.json` aus dem repo kopieren
+3. `npx json-server -p 3001 data.json`
