@@ -17,6 +17,11 @@ Links:
 
 - https://react.dev/learn/thinking-in-react
 - https://overreacted.io/a-complete-guide-to-useeffect/
+- HTTP Libs
+  - https://github.com/sindresorhus/ky
+  - https://github.com/axios/axios
+- Schema Validierung: https://zod.dev/
+- https://tanstack.com/query/latest
 
 Komponenten:
 

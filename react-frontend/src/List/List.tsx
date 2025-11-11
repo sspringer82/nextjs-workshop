@@ -1,6 +1,7 @@
 import React, { useEffect, useState, type ReactNode } from 'react';
 import type { Movie } from '../types/Movie';
 import ListItem from './ListItem';
+import { getMovies } from './movies.api';
 
 const initialMovies: Movie[] = [
   { id: 1, title: 'Die Schlümpfe', year: 2011 },
@@ -10,11 +11,18 @@ const initialMovies: Movie[] = [
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [error, setError] = useState<string>('');
   useEffect(() => {
     // setTimeout(() => {
     //   setMovies(initialMovies);
     // }, 1_000);
     // data fetching
+    getMovies()
+      .then((data) => setMovies(data))
+      .catch((error) => {
+        console.error(error);
+        setError('Whoops, da ist etwas schiefgelaufen!');
+      });
   }, []);
 
   function handleDelete(id: number) {
@@ -26,7 +34,9 @@ const List: React.FC = () => {
 
   let content: ReactNode;
 
-  if (movies.length === 0) {
+  if (error) {
+    content = <div>{error}</div>;
+  } else if (movies.length === 0) {
     content = <div>Keine Lieblingsfilme vorhanden.</div>;
   } else {
     content = (
