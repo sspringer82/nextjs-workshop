@@ -1,8 +1,7 @@
-import List from './List/List';
-import StateLifecycle from './StateLifecycle';
+import Parent from './children/Parent';
 
 const App: React.FC = () => {
-  return <StateLifecycle />;
+  return <Parent />;
 };
 
 export default App;

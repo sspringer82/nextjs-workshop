@@ -25,6 +25,7 @@ const StateLifecycle: React.FC = () => {
   function handleClick() {
     // Überschreiben
     //setState(['Avatar', 'A-Team', 'Avengers']);
+
     // Aktualisieren
     setMovies((prevState) => {
       const clone = structuredClone(prevState);
