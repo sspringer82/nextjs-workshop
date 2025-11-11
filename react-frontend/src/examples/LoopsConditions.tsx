@@ -2,7 +2,8 @@
 //   // const movies = ['Die Schlümpfe', 'Shrek', 'Toy Story'];
 //   const movies = [];
 
-import List from './List';
+import type { ReactNode } from 'react';
+import type { Movie } from '../types/Movie';
 
 //   if (movies.length === 0) {
 //     return <div>Keine Lieblingsfilme vorhanden.</div>;
@@ -66,18 +67,24 @@ import List from './List';
 //   );
 // };
 
-function createContent(movies) {
-  let content = <div>Keine Lieblingsfilme vorhanden.</div>;
+function createContent(movies: Movie[]): React.ReactNode {
+  let content: ReactNode = <div>Keine Lieblingsfilme vorhanden.</div>;
 
   if (movies.length > 0) {
-    content = movies.map((movie, index) => <div key={index}>{movie}</div>);
+    content = movies.map((movie, index) => (
+      <div key={index}>{movie.title}</div>
+    ));
   }
 
   return content;
 }
 
 const App: React.FC = () => {
-  const movies = ['Die Schlümpfe', 'Shrek', 'Toy Story'];
+  const movies: Movie[] = [
+    { id: 1, title: 'Die Schlümpfe', year: 2011 },
+    { id: 2, title: 'Shrek', year: 2001 },
+    { id: 3, title: 'Toy Story', year: 1995 },
+  ];
 
   return (
     <div>

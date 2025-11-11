@@ -3,12 +3,6 @@ import type { Movie } from '../types/Movie';
 import ListItem from './ListItem';
 import { getMovies } from './movies.api';
 
-const initialMovies: Movie[] = [
-  { id: 1, title: 'Die Schlümpfe', year: 2011 },
-  { id: 2, title: 'Shrek', year: 2001 },
-  { id: 3, title: 'Toy Story', year: 1995 },
-];
-
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState<string>('');
