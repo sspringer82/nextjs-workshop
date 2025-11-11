@@ -8,3 +8,11 @@ Setup:
 
 - npm create vite@latest
   npm create vite@latest react-frontend -- --template react-ts
+
+Start:
+
+npm run dev
+
+Links:
+
+- https://react.dev/learn/thinking-in-react
