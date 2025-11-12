@@ -1,7 +1,7 @@
-import Uncontrolled from './Forms/Uncontrolled';
+import List from './List/List';
 
 const App: React.FC = () => {
-  return <Uncontrolled />;
+  return <List />;
 };
 
 export default App;
