@@ -2,7 +2,7 @@ import List from './List/List';
 import Form from './RHF/Form';
 
 const App: React.FC = () => {
-  return <Form />;
+  return <List />;
 };
 
 export default App;

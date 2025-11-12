@@ -6,7 +6,8 @@ import React, {
 } from 'react';
 import type { Movie } from '../types/Movie';
 import ListItem from './ListItem';
-import { getMovies } from './movies.api';
+import Form from './Form';
+import { getMovies } from '../api/movies.api';
 
 const List: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -85,6 +86,8 @@ const List: React.FC = () => {
   // Rendering
   return (
     <div>
+      <Form />
+      <hr />
       <h1>Meine Lieblingsfilme</h1>
 
       {content}
