@@ -1,34 +1,15 @@
-import React, {
-  useEffect,
-  useState,
-  type ChangeEvent,
-  type ReactNode,
-} from 'react';
-import type { Movie } from '../types/Movie';
+import React, { useState, type ChangeEvent, type ReactNode } from 'react';
 import ListItem from './ListItem';
-import Form from './Form';
-import { getMovies } from '../api/movies.api';
+import type { Movie } from '../types/Movie';
 
-const List: React.FC = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [error, setError] = useState<string>('');
+type Props = {
+  error: string;
+  movies: Movie[];
+  handleDelete: (id: string) => void;
+};
+
+const List: React.FC<Props> = ({ error, movies, handleDelete }) => {
   const [filter, setFilter] = useState<string>('');
-
-  useEffect(() => {
-    getMovies()
-      .then((data) => setMovies(data))
-      .catch((error) => {
-        console.error(error);
-        setError('Whoops, da ist etwas schiefgelaufen!');
-      });
-  }, []);
-
-  function handleDelete(id: number) {
-    setMovies((prevMovies) => {
-      const clone = structuredClone(prevMovies);
-      return clone.filter((movie) => movie.id !== id);
-    });
-  }
 
   let content: ReactNode;
 
@@ -86,8 +67,6 @@ const List: React.FC = () => {
   // Rendering
   return (
     <div>
-      <Form />
-      <hr />
       <h1>Meine Lieblingsfilme</h1>
 
       {content}

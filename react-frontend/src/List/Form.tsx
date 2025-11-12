@@ -1,13 +1,15 @@
 import { useForm } from 'react-hook-form';
-import type { CreateMovie, Movie } from '../types/Movie';
-import { createMovie } from '../api/movies.api';
+import type { CreateMovie } from '../types/Movie';
 
-const Form: React.FC = () => {
+type Props = {
+  handleCreate: (movie: CreateMovie) => Promise<void>;
+};
+
+const Form: React.FC<Props> = ({ handleCreate }) => {
   const { handleSubmit, register } = useForm<CreateMovie>();
 
   async function onSubmit(data: CreateMovie) {
-    const response = await createMovie(data);
-    console.log('Erfolg:', response);
+    handleCreate(data);
   }
 
   return (

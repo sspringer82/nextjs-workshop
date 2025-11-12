@@ -3,7 +3,7 @@ import type { Movie } from '../types/Movie';
 
 type Props = {
   movie: Movie;
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 };
 
 const ListItem: React.FC<Props> = ({ movie, onDelete }) => {

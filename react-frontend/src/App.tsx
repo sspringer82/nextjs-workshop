@@ -1,8 +1,7 @@
-import List from './List/List';
-import Form from './RHF/Form';
+import Movies from './List/Movies';
 
 const App: React.FC = () => {
-  return <List />;
+  return <Movies />;
 };
 
 export default App;
