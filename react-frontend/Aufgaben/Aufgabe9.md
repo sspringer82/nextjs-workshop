@@ -28,6 +28,6 @@ Zeige eine Fehlermeldung an, falls ein Fehler vorhanden ist.
 ```ts
 const schema = z.object({
   title: z.string().min(2).max(10),
-  year: z.coerce.int().gte(1900).lte(2025),
+  year: z.coerce.number().int().gte(1900).lte(2025),
 });
 ```
