@@ -22,6 +22,7 @@ Links:
   - https://github.com/axios/axios
 - Schema Validierung: https://zod.dev/
 - https://tanstack.com/query/latest
+- https://choosealicense.com/
 
 Komponenten:
 

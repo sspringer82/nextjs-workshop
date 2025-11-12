@@ -23,3 +23,12 @@ export async function createMovie(newMovie: CreateMovie): Promise<Movie> {
   }
   return response.json();
 }
+
+export async function deleteMovie(id: string): Promise<void> {
+  const response = await fetch(`http://localhost:3001/movies/${id}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error('whoops');
+  }
+}

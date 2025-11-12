@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Form from './Form';
 import List from './List';
 import type { CreateMovie, Movie } from '../types/Movie';
-import { createMovie, getMovies } from '../api/movies.api';
+import { createMovie, deleteMovie, getMovies } from '../api/movies.api';
 
 const Movies: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -17,11 +17,18 @@ const Movies: React.FC = () => {
       });
   }, []);
 
-  function handleDelete(id: string) {
-    setMovies((prevMovies) => {
-      const clone = structuredClone(prevMovies);
-      return clone.filter((movie) => movie.id !== id);
-    });
+  async function handleDelete(id: string) {
+    try {
+      await deleteMovie(id);
+
+      setMovies((prevMovies) => {
+        const clone = structuredClone(prevMovies);
+        return clone.filter((movie) => movie.id !== id);
+      });
+    } catch (error) {
+      console.error(error);
+      setError('Datensatz konnte nicht gelöscht werden');
+    }
   }
 
   async function handleCreate(movie: CreateMovie) {
