@@ -1,7 +1,7 @@
-import Movies from './List/Movies';
+import Base from './Context/Base';
 
 const App: React.FC = () => {
-  return <Movies />;
+  return <Base />;
 };
 
 export default App;
