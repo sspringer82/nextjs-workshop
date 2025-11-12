@@ -1,11 +1,6 @@
 {
   "movies": [
     {
-      "id": "da85",
-      "title": "Bambi",
-      "year": "1965"
-    },
-    {
       "id": "6a7b8c",
       "title": "Forrest Gump",
       "year": 1994

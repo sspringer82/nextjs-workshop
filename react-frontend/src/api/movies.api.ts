@@ -1,3 +1,4 @@
+import { useMoviesContext } from '../List/MoviesProvider';
 import type { CreateMovie, Movie } from '../types/Movie';
 
 export async function getMovies() {

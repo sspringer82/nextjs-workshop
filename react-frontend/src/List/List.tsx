@@ -5,10 +5,9 @@ import type { Movie } from '../types/Movie';
 type Props = {
   error: string;
   movies: Movie[];
-  handleDelete: (id: string) => void;
 };
 
-const List: React.FC<Props> = ({ error, movies, handleDelete }) => {
+const List: React.FC<Props> = ({ error, movies }) => {
   const [filter, setFilter] = useState<string>('');
 
   let content: ReactNode;
@@ -51,11 +50,7 @@ const List: React.FC<Props> = ({ error, movies, handleDelete }) => {
               </tr>
             ) : (
               filteredMovies.map((movie) => (
-                <ListItem
-                  key={movie.id}
-                  movie={movie}
-                  onDelete={handleDelete}
-                />
+                <ListItem key={movie.id} movie={movie} />
               ))
             )}
           </tbody>

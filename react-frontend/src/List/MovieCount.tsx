@@ -1,7 +1,11 @@
 import { useMoviesContext } from './MoviesProvider';
+import { useMovies } from './useMovies';
 
 const MovieCount: React.FC = () => {
-  const [movies] = useMoviesContext();
+  // const [movies] = useMoviesContext();
+
+  const { movies } = useMovies();
+
   return (
     <div
       style={{
