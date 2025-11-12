@@ -9,6 +9,7 @@ import {
 
 type DarkModeContextType = [boolean, Dispatch<SetStateAction<boolean>>] | null;
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const DarkModeContext = createContext<DarkModeContextType>(null);
 
 type Props = {
@@ -26,6 +27,7 @@ export const DarkModeProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useDarkModeContext() {
   const darkModeContext = useContext(DarkModeContext);
   if (darkModeContext === null) {

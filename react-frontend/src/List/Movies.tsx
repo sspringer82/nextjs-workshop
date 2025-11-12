@@ -3,9 +3,10 @@ import Form from './Form';
 import List from './List';
 import type { CreateMovie, Movie } from '../types/Movie';
 import { createMovie, deleteMovie, getMovies } from '../api/movies.api';
+import { useMoviesContext } from './MoviesProvider';
 
 const Movies: React.FC = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useMoviesContext();
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
