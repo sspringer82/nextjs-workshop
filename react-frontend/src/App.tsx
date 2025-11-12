@@ -1,7 +1,8 @@
 import List from './List/List';
+import Form from './RHF/Form';
 
 const App: React.FC = () => {
-  return <List />;
+  return <Form />;
 };
 
 export default App;
