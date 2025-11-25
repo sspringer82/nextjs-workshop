@@ -1,4 +1,4 @@
-import { getMovieById } from '@/api/movie.api';
+import { getMovieById, getMovies } from '@/api/movie.api';
 import BackButton from '@/components/BackButton';
 import { NextPage } from 'next';
 
@@ -20,3 +20,15 @@ const MovieDetailPage: NextPage<Props> = async ({ params }) => {
 };
 
 export default MovieDetailPage;
+
+export async function generateStaticParams() {
+  try {
+    const movies = await getMovies();
+    return movies.map((movie) => ({
+      id: movie.id,
+    }));
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
