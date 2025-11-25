@@ -9,3 +9,8 @@ export async function getMovies(): Promise<Movie[]> {
   const movies = await ky.get<Movie[]>(url).json();
   return z.array(MovieSchema).parse(movies);
 }
+
+export async function getMovieById(id: string): Promise<Movie> {
+  const movie = await ky.get<Movie>(`${url}/${id}`).json();
+  return MovieSchema.parse(movie);
+}

@@ -25,3 +25,12 @@ const UserDetailPage: NextPage<Props> = async ({ params }) => {
 };
 
 export default UserDetailPage;
+
+export function generateStaticParams() {
+  return [
+    {
+      id: '1',
+    },
+    { id: '9ec1' },
+  ];
+}
