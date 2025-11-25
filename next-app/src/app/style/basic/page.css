@@ -1,0 +1,13 @@
+div.basic {
+  .hotpinkBox {
+    height: 100px;
+    width: 100px;
+    background-color: hotpink;
+  }
+
+  .basicBox {
+    height: 50px;
+    width: 50px;
+    border: 1px dashed black;
+  }
+}

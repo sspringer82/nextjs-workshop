@@ -13,3 +13,12 @@
 - haben keinene Lifecycle
 - haben keine User Interaktion
 - Voller Zugriff auf Node.js inclusive fetch
+
+# Styling
+
+- inline css
+- css import
+- css modules
+- sass `npm install sass`
+- css-in-js `npm install styled-components`
+- tailwind
