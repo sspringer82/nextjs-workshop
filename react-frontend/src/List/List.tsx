@@ -1,4 +1,10 @@
-import React, { useState, type ChangeEvent, type ReactNode } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type ReactNode,
+} from 'react';
 import ListItem from './ListItem';
 import type { Movie } from '../types/Movie';
 
@@ -9,6 +15,14 @@ type Props = {
 
 const List: React.FC<Props> = ({ error, movies }) => {
   const [filter, setFilter] = useState<string>('');
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current?.focus();
+    }
+  });
 
   let content: ReactNode;
 
@@ -28,6 +42,8 @@ const List: React.FC<Props> = ({ error, movies }) => {
         <label>
           Filter:
           <input
+            autoFocus
+            ref={inputRef}
             type="text"
             placeholder="deine Suche"
             value={filter}
