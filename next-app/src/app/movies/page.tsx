@@ -1,4 +1,5 @@
 import { getMovies } from '@/api/movie.api';
+import List from '@/components/movies/List';
 import { Movie } from '@/types/Movie';
 import { NextPage } from 'next';
 
@@ -15,28 +16,7 @@ const MoviesPage: NextPage = async () => {
   return (
     <>
       <h1>Movie List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies.length === 0 && (
-            <tr>
-              <td colSpan={2}>No movies there!</td>
-            </tr>
-          )}
-          {movies.length > 0 &&
-            movies.map((movie) => (
-              <tr key={movie.id}>
-                <td>{movie.title}</td>
-                <td>{movie.year}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <List movies={movies} />
     </>
   );
 };
