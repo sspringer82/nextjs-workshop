@@ -1,4 +1,6 @@
-export async function getMovies() {
+import { Movie } from '@/types/Movie';
+
+export async function getMovies(): Promise<Movie[]> {
   const response = await fetch('http://localhost:3001/movies');
 
   if (!response.ok) {
