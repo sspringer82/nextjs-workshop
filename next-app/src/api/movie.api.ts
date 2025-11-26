@@ -12,7 +12,7 @@ export async function getMovies(): Promise<Movie[]> {
 }
 
 export async function getMovieById(id: string): Promise<Movie> {
-  await setTimeout(2_000);
+  await setTimeout(500);
   const movie = await ky.get<Movie>(`${url}/${id}`).json();
   return MovieSchema.parse(movie);
 }

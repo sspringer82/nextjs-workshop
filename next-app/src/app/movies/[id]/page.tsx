@@ -1,6 +1,9 @@
 import { getMovieById, getMovies } from '@/api/movie.api';
 import BackButton from '@/components/BackButton';
+import { Movie } from '@/types/Movie';
+import { HTTPError } from 'ky';
 import { NextPage } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -8,7 +11,17 @@ type Props = {
 
 const MovieDetailPage: NextPage<Props> = async ({ params }) => {
   const { id } = await params;
-  const movie = await getMovieById(id);
+
+  let movie: Movie | null = null;
+  try {
+    movie = await getMovieById(id);
+  } catch (error) {
+    if (error instanceof HTTPError && error.response.status === 404) {
+      notFound();
+    } else {
+      throw error;
+    }
+  }
 
   // throw new Error('☠️');
 
