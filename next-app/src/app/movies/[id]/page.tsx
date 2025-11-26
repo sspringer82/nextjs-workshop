@@ -10,6 +10,8 @@ const MovieDetailPage: NextPage<Props> = async ({ params }) => {
   const { id } = await params;
   const movie = await getMovieById(id);
 
+  // throw new Error('☠️');
+
   return (
     <>
       <h1>{movie.title}</h1>
