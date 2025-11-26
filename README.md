@@ -23,6 +23,12 @@ Links:
 - Schema Validierung: https://zod.dev/
 - https://tanstack.com/query/latest
 - https://choosealicense.com/
+- AI für Webseiten: https://v0.app/
+- Component Libraries:
+  - https://ui.shadcn.com/
+  - https://mui.com/material-ui/
+  - https://react-bootstrap.netlify.app/
+- Examples: https://github.com/vercel/next.js/tree/canary/examples
 
 Komponenten:
 
