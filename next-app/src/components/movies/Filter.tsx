@@ -31,6 +31,7 @@ const Filter: React.FC<Props> = ({ initialValue = '' }) => {
         onChange={(event) => {
           setFilter(event.target.value);
         }}
+        style={{ border: '1px solid black' }}
       />
       <button type="submit">filter</button>
     </form>
