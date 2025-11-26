@@ -1,5 +1,6 @@
 import { Movie, MovieSchema } from '@/types/Movie';
 import ky from 'ky';
+import { setTimeout } from 'node:timers/promises';
 import z from 'zod/v4';
 
 const moviePath = 'movies';
@@ -11,6 +12,7 @@ export async function getMovies(): Promise<Movie[]> {
 }
 
 export async function getMovieById(id: string): Promise<Movie> {
+  await setTimeout(2_000);
   const movie = await ky.get<Movie>(`${url}/${id}`).json();
   return MovieSchema.parse(movie);
 }
