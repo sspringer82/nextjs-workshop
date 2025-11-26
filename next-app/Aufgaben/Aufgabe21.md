@@ -7,6 +7,10 @@ Implementiere ein Formular zur Erstellung eines neuen Movies.
 Nutze die `useActionState`-Funktion, um das Formular abzusenden.
 
 ```ts
+type State = {
+  error: string
+}
+
 const [, submitAction] = useActionState<State, FormData>(createMovie, {
     error: '',
   });
@@ -17,9 +21,20 @@ const [, submitAction] = useActionState<State, FormData>(createMovie, {
 Implementiere die createMovie-Funktion als Server Function `use server`
 
 ```ts
-const newMovie = Object.fromEntries(
-  formData.entries()
-) as unknown as CreateMovie;
+type State = {
+  error: string;
+};
+
+export async function createMovie(
+  state: State,
+  formData: FormData
+): Promise<State> {
+  const newMovie = Object.fromEntries(
+    formData.entries()
+  ) as unknown as CreateMovie;
+
+  // the magic happens here
+}
 ```
 
 Speichere die Daten mit einem POST-Request im Backend
