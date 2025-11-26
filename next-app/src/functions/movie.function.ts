@@ -1,7 +1,7 @@
 'use server';
 
 import { createMovie, deleteMovie } from '@/api/movie.api';
-import { CreateMovieSchema } from '@/types/Movie';
+import { CreateMovie, CreateMovieSchema } from '@/types/Movie';
 import ky from 'ky';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -13,6 +13,10 @@ export async function deleteMovieFunction(id: string) {
 
 export type State = {
   error: string;
+  values: {
+    title: string;
+    year: number;
+  };
 };
 
 export async function createMovieFunction(
@@ -20,11 +24,19 @@ export async function createMovieFunction(
   formdata: FormData
 ): Promise<State> {
   const movie = Object.fromEntries(formdata.entries());
-  const result = CreateMovieSchema.parse(movie);
-  await createMovie(result);
+  try {
+    const result = CreateMovieSchema.parse(movie);
+    await createMovie(result);
+  } catch (error) {
+    return {
+      error: 'Validation failed' + error,
+      values: movie as unknown as CreateMovie,
+    };
+  }
+  redirect('/movies');
+}
 
-  return {
-    error: 'whatever',
-  };
+export async function saveMovie(newMovie: CreateMovie) {
+  await createMovie(newMovie);
   redirect('/movies');
 }
