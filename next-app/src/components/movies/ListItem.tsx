@@ -15,7 +15,7 @@ const ListItem: React.FC<Props> = ({ movie }) => {
         <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
       </td>
       <td>{movie.year}</td>
-      <td>
+      <td style={{ padding: 2 }}>
         <DeleteMovieButton id={movie.id} />
       </td>
     </tr>
