@@ -1,6 +1,6 @@
 'use client';
 
-import { doItAction, doSomethingElseAction } from '@/actions/user.actions';
+import { doItAction, doSomethingElseAction } from '@/functions/user.functions';
 
 const Button: React.FC = () => {
   return (
