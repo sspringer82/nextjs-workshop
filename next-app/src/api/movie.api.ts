@@ -14,3 +14,7 @@ export async function getMovieById(id: string): Promise<Movie> {
   const movie = await ky.get<Movie>(`${url}/${id}`).json();
   return MovieSchema.parse(movie);
 }
+
+export async function deleteMovie(id: string): Promise<void> {
+  await ky.delete(process.env.BACKEND_URL + '/movies/' + id);
+}

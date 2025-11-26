@@ -22,3 +22,7 @@
 - sass `npm install sass`
 - css-in-js `npm install styled-components`
 - tailwind
+
+# Server Functions
+
+https://react.dev/reference/rsc/server-functions

@@ -1,9 +1,9 @@
 'use server';
 
-import ky from 'ky';
+import { deleteMovie } from '@/api/movie.api';
 import { revalidatePath } from 'next/cache';
 
-export async function deleteMovie(id: string) {
-  await ky.delete(process.env.BACKEND_URL + '/movies/' + id);
+export async function deleteMovieFunction(id: string) {
+  await deleteMovie(id);
   revalidatePath('/movies');
 }
