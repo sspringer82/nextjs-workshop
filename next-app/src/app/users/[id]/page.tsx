@@ -1,18 +1,27 @@
 import ky from 'ky';
 import { NextPage } from 'next';
+import { setTimeout } from 'node:timers/promises';
+import UserLoading from './loading';
 
 type Props = {
   params: Promise<{ id: string }>;
 };
 
-const UserDetailPage: NextPage<Props> = async ({ params }) => {
-  const { id } = await params;
+async function fetchUser(id: string) {
+  await setTimeout(2000);
 
   const user = await ky
     .get<{ name: string; role: string }>(
       `${process.env.BACKEND_URL}/users/${id}`
     )
     .json();
+  return user;
+}
+
+const UserDetailPage: NextPage<Props> = async ({ params }) => {
+  const { id } = await params;
+
+  const user = await fetchUser(id);
 
   return (
     <>

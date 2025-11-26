@@ -1,5 +1,6 @@
 import ky from 'ky';
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { json } from 'zod/v4/mini';
 
 type Props = {
@@ -23,7 +24,9 @@ const UsersPage: NextPage<Props> = async ({ searchParams }) => {
         .filter((user) => !query || user.name.includes(query))
         .map((user) => (
           <div key={user.id}>
-            <h2>{user.name}</h2>
+            <h2>
+              <Link href={`/users/${user.id}`}>{user.name}</Link>
+            </h2>
             <p>{user.role}</p>
           </div>
         ))}
