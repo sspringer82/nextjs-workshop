@@ -3,6 +3,7 @@ import Filter from '@/components/movies/Filter';
 import List from '@/components/movies/List';
 import { Movie } from '@/types/Movie';
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 type Props = {
   searchParams: Promise<{ filter: string }>;
@@ -30,6 +31,7 @@ const MoviesPage: NextPage<Props> = async ({ searchParams }) => {
       <h1>Movie List</h1>
       <Filter initialValue={filter} />
       <List movies={filteredMovies} />
+      <Link href="/movies/create">New</Link>
     </>
   );
 };
